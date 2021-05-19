@@ -27,14 +27,15 @@ public class Login {
     @FXML
     private ToggleGroup group;
 
-    public void login(ActionEvent event) throws IOException {
+    @FXML
+    private void login() throws IOException {
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         String toogleGroupValue = selectedRadioButton.getText();
         
         System.out.println("Matricula: " + registration.getText());
         System.out.println("Senha: " + password.getText());
         System.out.println(toogleGroupValue);
-
+        App.setRoot("secondary");
         
 
     }

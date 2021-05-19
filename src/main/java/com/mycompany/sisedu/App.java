@@ -33,15 +33,11 @@ public class App extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
 //        return fxmlLoader.load();
 //    }
-    
+    @Override
     public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-        
-        Scene scene = new Scene(root);
+        scene = new Scene(loadFXML("login"), 1280, 720);
         stage.setScene(scene);
-
         stage.setResizable(false);
-        
         stage.show();
     }
     

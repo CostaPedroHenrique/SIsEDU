@@ -60,7 +60,7 @@
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
                      </effect>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="108.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome da escola" textAlignment="CENTER">
+                  <Text fill="WHITE" layoutX="100.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome da escola" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="23.0" />
                      </font>
@@ -143,7 +143,7 @@
                   <Font name="System Bold" size="30.0" />
                </font>
             </Text>
-            <TableView layoutX="517.0" layoutY="409.0" prefHeight="233.0" prefWidth="542.0">
+            <TableView layoutX="447.0" layoutY="373.0" prefHeight="310.0" prefWidth="697.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="Aluno" />
                 <TableColumn prefWidth="75.0" text="Turma" />
