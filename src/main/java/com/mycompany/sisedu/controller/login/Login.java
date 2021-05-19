@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -35,9 +36,16 @@ public class Login {
         System.out.println("Matricula: " + registration.getText());
         System.out.println("Senha: " + password.getText());
         System.out.println(toogleGroupValue);
-        App.setRoot("secondary");
-        
-
+        accessDanieded();
+//        App.setRoot("secondary");
+    }
+    
+    private void accessDanieded(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Acesso negado");
+        alert.setHeaderText("Verifique se os dados inseridos estão corretos");
+        alert.setContentText("Verifique se marcou o tipo de usuário correto");
+        alert.show();
     }
 
 //    @Override
