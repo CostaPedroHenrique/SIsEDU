@@ -50,7 +50,8 @@ public class TeacherController {
 //    Irei terminar algum dia
     public List<Teacher> find( String registration, String password){
         em.getTransaction().begin();
-        Query search = em.createQuery("SELECT teacher FROM Teacher teacher where");
+        String query = "SELECT teacher FROM Teacher teacher where  email=".concat(registration).concat("and password=").concat(password);
+        Query search = em.createQuery(query);
         List<Teacher> teachers = search.getResultList();
         emf.close();
         
