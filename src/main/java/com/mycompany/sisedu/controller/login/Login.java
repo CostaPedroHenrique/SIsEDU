@@ -1,8 +1,11 @@
 package com.mycompany.sisedu.controller.login;
 
 import com.mycompany.sisedu.App;
+import com.mycompany.sisedu.controller.AdminController;
+import com.mycompany.sisedu.model.Admin;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,12 +35,15 @@ public class Login {
     private void login() throws IOException {
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         String toogleGroupValue = selectedRadioButton.getText();
+        String registrationValue = registration.getText();
+        String passwordValue = password.getText();
         
-        System.out.println("Matricula: " + registration.getText());
-        System.out.println("Senha: " + password.getText());
-        System.out.println(toogleGroupValue);
+//        System.out.println("Matricula: " + registration.getText());
+//        System.out.println("Senha: " + password.getText());
+//        System.out.println(toogleGroupValue);
 //        accessDanieded();
-        App.setRoot("secondary");
+//        App.setRoot("secondary");
+        getAdmin(registrationValue, passwordValue);
     }
     
     private void accessDanieded(){
@@ -46,6 +52,18 @@ public class Login {
         alert.setHeaderText("Verifique se os dados inseridos estão corretos");
         alert.setContentText("Verifique se marcou o tipo de usuário correto");
         alert.show();
+    }
+    
+    
+    private void getAdmin( String registration, String password ){
+        int i;
+        List<Admin> admins;
+        AdminController controller = new AdminController();
+        admins = controller.find(  registration, password );
+        
+        for(i=0; i < admins.size(); i++){
+            System.out.println(admins.get(i).getName());
+        }
     }
 
 //    @Override

@@ -1,6 +1,7 @@
 package com.mycompany.sisedu.controller;
 
 import com.mycompany.sisedu.model.Admin;
+import com.mycompany.sisedu.model.Teacher;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -48,6 +49,15 @@ public class AdminController {
         emf.close();
         
         return admins; 
+    }
+    
+    public List<Admin> find( String registration, String password){
+        em.getTransaction().begin();
+        String query = "SELECT admin FROM Admin admin where  email=".concat(registration).concat("and password=").concat(password);
+        Query search = em.createQuery(query);
+        List<Admin> admins = search.getResultList();
+        
+        return admins;
     }
     
     public Admin find( int id){

@@ -33,6 +33,7 @@
 -->
 
 <?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.ColorAdjust?>
@@ -74,11 +75,6 @@
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
                      </effect>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="85.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turmas" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Text>
                   <ImageView fitHeight="70.0" fitWidth="40.0" layoutX="24.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/estudante.png" />
@@ -87,11 +83,6 @@
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
                      </effect>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="87.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alunos" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Text>
                   <ImageView fitHeight="70.0" fitWidth="40.0" layoutX="23.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/prof.png" />
@@ -100,11 +91,6 @@
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
                      </effect>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="85.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Professores" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Text>
                   <ImageView fitHeight="70.0" fitWidth="40.0" layoutX="30.0" layoutY="657.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/sair.png" />
@@ -118,6 +104,21 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
+                  <Button layoutX="78.0" layoutY="272.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Turmas" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="students" layoutX="71.0" layoutY="333.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Alunos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="teachers" layoutX="70.0" layoutY="399.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Professores" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
                </children>
             </Group>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="251.0" layoutX="338.0" layoutY="98.0" stroke="BLACK" strokeType="INSIDE" width="446.0" />

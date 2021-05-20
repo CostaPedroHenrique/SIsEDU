@@ -40,7 +40,7 @@ public class App extends Application {
 //    }
     @Override
     public void start(Stage stage) throws Exception{
-        scene = new Scene(loadFXML("login"));
+        scene = new Scene(loadFXML("login"), 1280, 720);
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         
