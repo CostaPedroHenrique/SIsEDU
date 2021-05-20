@@ -36,8 +36,8 @@ public class Login {
         System.out.println("Matricula: " + registration.getText());
         System.out.println("Senha: " + password.getText());
         System.out.println(toogleGroupValue);
-        accessDanieded();
-//        App.setRoot("secondary");
+//        accessDanieded();
+        App.setRoot("secondary");
     }
     
     private void accessDanieded(){

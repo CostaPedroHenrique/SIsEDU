@@ -3,13 +3,10 @@
 <!--
   Copyright (c) 2015, 2019, Gluon and/or its affiliates.
   All rights reserved. Use is subject to license terms.
-
   This file is available and licensed under the following license:
-
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions
   are met:
-
   - Redistributions of source code must retain the above copyright
     notice, this list of conditions and the following disclaimer.
   - Redistributions in binary form must reproduce the above copyright
@@ -18,7 +15,6 @@
   - Neither the name of Oracle Corporation nor the names of its
     contributors may be used to endorse or promote products derived
     from this software without specific prior written permission.
-
   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
   "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
   LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -46,13 +42,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.sisedu.controller.login.Login">
+<VBox prefHeight="400.0" prefWidth="640.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.sisedu.controller.login.Login">
   <children>
-    <AnchorPane maxHeight="720.0" maxWidth="1280.0" prefHeight="708.0" prefWidth="1277.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="720.0" maxWidth="1280.0" prefHeight="708.0" prefWidth="1277.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
       <children>
-            <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" fill="#e5e5e5" height="721.0" layoutX="-3.0" stroke="BLACK" strokeType="INSIDE" width="1283.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="720.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="680.0" />
-            <Group layoutX="104.0" layoutY="145.2314453125">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="584.0" layoutX="70.0" layoutY="68.0" stroke="TRANSPARENT" strokeType="INSIDE" width="596.0" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="68.0" />
+            <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" fill="#e5e5e5" height="668.0" layoutX="591.0" layoutY="33.0" stroke="TRANSPARENT" strokeType="INSIDE" style="border-radius: 1em;" width="583.0" />
+            <Group layoutX="102.0" layoutY="123.0">
                <children>
                    <TextField fx:id="registration" layoutY="51.7685546875" prefHeight="60.0" prefWidth="473.0">
                      <font>
@@ -64,7 +60,7 @@
                         <Font size="35.0" />
                      </font>
                   </Text>
-                  <PasswordField fx:id="password" layoutX="1.0" layoutY="228.0" maxWidth="1.7976931348623157E308" prefHeight="60.0" prefWidth="473.0">
+                  <PasswordField fx:id="password" layoutX="-1.0" layoutY="228.0" maxWidth="1.7976931348623157E308" prefHeight="60.0" prefWidth="473.0">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -96,7 +92,7 @@
                   </RadioButton>
                </children>
             </Group>
-            <ImageView fitHeight="453.0" fitWidth="590.0" layoutX="745.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="453.0" fitWidth="590.0" layoutX="640.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Login.png" />
                </image>

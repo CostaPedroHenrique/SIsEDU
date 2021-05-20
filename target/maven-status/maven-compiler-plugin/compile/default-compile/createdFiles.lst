@@ -1,6 +1,9 @@
 com/mycompany/sisedu/model/Student.class
 com/mycompany/sisedu/controller/AdminController.class
+com/mycompany/sisedu/PrimaryController.class
 com/mycompany/sisedu/controller/login/Login.class
+com/mycompany/sisedu/App.class
+com/mycompany/sisedu/model/User.class
 com/mycompany/sisedu/model/Adress.class
 com/mycompany/sisedu/model/Subject.class
 com/mycompany/sisedu/model/Teacher.class
