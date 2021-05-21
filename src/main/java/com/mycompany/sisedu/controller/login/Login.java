@@ -3,6 +3,7 @@ package com.mycompany.sisedu.controller.login;
 import com.mycompany.sisedu.App;
 import com.mycompany.sisedu.controller.AdminController;
 import com.mycompany.sisedu.model.Admin;
+import com.mycompany.sisedu.model.Student;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -70,13 +71,14 @@ public class Login {
         if (admins.size() > 0) {
             Admin admin = admins.get(0);
             App.setRoot("secondary");
-            accessPermited(admin.getName());
+            
         }
         else {
             accessDanieded();
         }
         
     }
+    
 
 //    @Override
 //    public void initialize(URL url, ResourceBundle rb) {

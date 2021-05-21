@@ -45,7 +45,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.sisedu.navigation.Navigation">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
@@ -104,17 +104,17 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <Button layoutX="78.0" layoutY="272.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Turmas" textFill="WHITE">
+                  <Button layoutX="69.0" layoutY="272.0" mnemonicParsing="false" onAction="#setViewCreateTeacher" style="-fx-background-color: transparent;" text="Turmas" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="students" layoutX="71.0" layoutY="333.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Alunos" textFill="WHITE">
+                  <Button fx:id="students" layoutX="71.0" layoutY="333.0" mnemonicParsing="false" onAction="#setViewCreateStudent" style="-fx-background-color: transparent;" text="Alunos" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="teachers" layoutX="70.0" layoutY="399.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Professores" textFill="WHITE">
+                  <Button fx:id="teachers" layoutX="70.0" layoutY="399.0" mnemonicParsing="false" onAction="#setViewCreateTeacher" style="-fx-background-color: transparent;" text="Professores" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>

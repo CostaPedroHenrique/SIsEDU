@@ -21,28 +21,24 @@ public class TeacherController {
         em.getTransaction().begin();
         em.persist(_teacher);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public void delete(Teacher _teacher){
         em.getTransaction().begin();
         em.remove(_teacher);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public void update(Teacher _teacher){
         em.getTransaction().begin();
         em.persist(_teacher);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public List<Teacher> list(){
         em.getTransaction().begin();
         Query search = em.createQuery("SELECT teacher FROM Teacher teacher");
         List<Teacher> teachers = search.getResultList();
-        emf.close();
         
         return teachers; 
     }
