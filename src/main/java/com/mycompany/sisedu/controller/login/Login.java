@@ -54,16 +54,28 @@ public class Login {
         alert.show();
     }
     
+     private void accessPermited(String name){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Bem vindo");
+        alert.setHeaderText("Seja bem vindo(a): " + name);
+        alert.show();
+    }
     
-    private void getAdmin( String registration, String password ){
+    
+    private void getAdmin( String registration, String password ) throws IOException{
         int i;
         List<Admin> admins;
         AdminController controller = new AdminController();
-        admins = controller.find(  registration, password );
-        
-        for(i=0; i < admins.size(); i++){
-            System.out.println(admins.get(i).getName());
+        admins = controller.find( registration, password );
+        if (admins.size() > 0) {
+            Admin admin = admins.get(0);
+            App.setRoot("secondary");
+            accessPermited(admin.getName());
         }
+        else {
+            accessDanieded();
+        }
+        
     }
 
 //    @Override

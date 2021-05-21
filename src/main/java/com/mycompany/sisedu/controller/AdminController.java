@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -53,10 +54,14 @@ public class AdminController {
     
     public List<Admin> find( String registration, String password){
         em.getTransaction().begin();
-        String query = "SELECT admin FROM Admin admin where  email=".concat(registration).concat("and password=").concat(password);
-        Query search = em.createQuery(query);
-        List<Admin> admins = search.getResultList();
-        
+        String jpql = "SELECT admin FROM Admin admin where email= '".concat(registration).concat("' and password= '").concat(password).concat("'");
+        System.out.println(jpql);
+        TypedQuery<Admin> typedQuery =  em.createQuery(jpql, Admin.class);
+        List<Admin> admins = typedQuery.getResultList();
+//     
+//        String query = "SELECT name FROM administrator where email= '".concat(registration).concat("' and password= '").concat(password).concat("'");
+//        Query search = em.createQuery(query);
+//        List<Admin> admins = search.getResultList();
         return admins;
     }
     
