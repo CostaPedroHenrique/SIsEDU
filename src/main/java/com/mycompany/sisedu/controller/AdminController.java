@@ -2,6 +2,7 @@ package com.mycompany.sisedu.controller;
 
 import com.mycompany.sisedu.model.Admin;
 import com.mycompany.sisedu.model.Teacher;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -52,7 +53,7 @@ public class AdminController {
         return admins; 
     }
     
-    public List<Admin> find( String registration, String password){
+    public List<Admin> find( String registration, String password) throws UnsupportedEncodingException{
         em.getTransaction().begin();
         String jpql = "SELECT admin FROM Admin admin where email= '".concat(registration).concat("' and password= '").concat(password).concat("'");
         System.out.println(jpql);

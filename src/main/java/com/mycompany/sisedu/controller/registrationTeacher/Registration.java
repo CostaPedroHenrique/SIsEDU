@@ -5,6 +5,7 @@ import com.mycompany.sisedu.App;
 import com.mycompany.sisedu.controller.TeacherController;
 import com.mycompany.sisedu.model.Teacher;
 import java.io.IOException;
+import java.util.Base64;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -32,11 +33,12 @@ public class Registration {
         String teacherName = name.getText();
         String teacherEmail = email.getText();
         String teacherPassword = password.getText();
+        String hashPassword = Base64.getEncoder().encodeToString(teacherPassword.getBytes());
         
         Teacher teacher = new Teacher();
         teacher.setEmail(teacherEmail);
         teacher.setName(teacherName);
-        teacher.setPassword(teacherPassword);
+        teacher.setPassword(hashPassword);
         
         TeacherController teacherController = new TeacherController();
         teacherController.save(teacher);

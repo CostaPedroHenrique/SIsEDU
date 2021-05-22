@@ -5,7 +5,11 @@ import com.mycompany.sisedu.controller.AdminController;
 import com.mycompany.sisedu.model.Admin;
 import com.mycompany.sisedu.model.Student;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -33,20 +37,20 @@ public class Login {
     private ToggleGroup group;
 
     @FXML
-    private void login() throws IOException {
+    private void login() throws IOException, NoSuchAlgorithmException {
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         String toogleGroupValue = selectedRadioButton.getText();
         String registrationValue = registration.getText();
         String passwordValue = password.getText();
         
-//        System.out.println("Matricula: " + registration.getText());
-//        System.out.println("Senha: " + password.getText());
-//        System.out.println(toogleGroupValue);
-//        accessDanieded();
-//        App.setRoot("secondary");
-        getAdmin(registrationValue, passwordValue);
+        String hashPassword = Base64.getEncoder().encodeToString(passwordValue.getBytes());
+
+        System.out.println("senha crypto");
+        System.out.println(hashPassword);
+         
+        getAdmin(registrationValue, hashPassword);
     }
-    
+
     private void accessDanieded(){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Acesso negado");
