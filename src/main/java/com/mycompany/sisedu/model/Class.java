@@ -18,7 +18,6 @@ import javax.persistence.Table;
 @Table(name="class")
 public class Class {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Integer registrationCode;
 
     @Column(name="shift")
@@ -83,5 +82,10 @@ public class Class {
 
     public void setSchool(School school) {
         this.school = school;
+    }
+
+    @Override
+    public String toString() {
+        return getClassroom();
     }
 }

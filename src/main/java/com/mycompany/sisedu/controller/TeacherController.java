@@ -49,7 +49,6 @@ public class TeacherController {
         String query = "SELECT teacher FROM Teacher teacher where  email=".concat(registration).concat("and password=").concat(password);
         Query search = em.createQuery(query);
         List<Teacher> teachers = search.getResultList();
-        emf.close();
         
         return teachers;
     }

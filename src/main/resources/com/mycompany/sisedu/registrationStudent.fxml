@@ -131,7 +131,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="5.0" layoutX="352.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="896.0" />
             <Group layoutX="388.0" layoutY="172.0">
                <children>
-                  <TextField layoutY="43.0" prefHeight="39.0" prefWidth="400.0">
+                  <TextField fx:id="name" layoutY="43.0" prefHeight="39.0" prefWidth="400.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -141,7 +141,7 @@
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </Text>
-                  <TextField layoutY="136.0" prefHeight="39.0" prefWidth="400.0">
+                  <TextField fx:id="email" layoutY="136.0" prefHeight="39.0" prefWidth="400.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -156,17 +156,17 @@
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </Text>
-                  <Button layoutX="68.0" layoutY="382.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="269.0" style="-fx-background-color: #E77D00;" text="CADASTRAR" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                  <Button layoutX="68.0" layoutY="382.0" mnemonicParsing="false" onAction="#save" prefHeight="72.0" prefWidth="269.0" style="-fx-background-color: #E77D00;" text="CADASTRAR" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Button>
-                  <PasswordField layoutX="2.0" layoutY="232.0" prefHeight="39.0" prefWidth="400.0">
+                  <PasswordField fx:id="password" layoutX="2.0" layoutY="232.0" prefHeight="39.0" prefWidth="400.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </PasswordField>
-                  <ChoiceBox layoutX="-1.0" layoutY="321.0" prefHeight="25.0" prefWidth="151.0" />
+                  <ChoiceBox fx:id="className" layoutX="-1.0" layoutY="321.0" prefHeight="25.0" prefWidth="151.0" />
                   <Text fill="WHITE" layoutX="-1.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turma" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="25.0" />

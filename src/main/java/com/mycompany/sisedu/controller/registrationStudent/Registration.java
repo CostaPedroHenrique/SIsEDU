@@ -3,20 +3,36 @@ import com.mycompany.sisedu.controller.registrationTeacher.*;
 import com.mycompany.sisedu.App;
 
 import com.mycompany.sisedu.App;
+import com.mycompany.sisedu.controller.ClassController;
+import com.mycompany.sisedu.controller.SchoolController;
+import com.mycompany.sisedu.controller.StudentController;
 import com.mycompany.sisedu.controller.TeacherController;
+import com.mycompany.sisedu.model.Student;
 import com.mycompany.sisedu.model.Teacher;
+import com.mycompany.sisedu.model.Class;
+import com.mycompany.sisedu.model.School;
+
 import java.io.IOException;
+import java.net.URL;
+import java.util.Base64;
+import java.util.List;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TextField;
 
 /**
  *
  * @author pedrohenrique
  */
-public class Registration {
+public class Registration implements Initializable{
     
     @FXML
     private TextField name;
@@ -28,23 +44,37 @@ public class Registration {
     private PasswordField password;
 
     @FXML
+    private ChoiceBox<Class> className;
+    
+    private ObservableList<Class> obsClass;
+
+    @FXML
     void save() {
-        System.out.println("chegou aqui");
-        String teacherName = name.getText();
-        String teacherEmail = email.getText();
-        String teacherPassword = password.getText();
+        SchoolController schoolController = new SchoolController();
+        School school = schoolController.find(1);
         
-        Teacher teacher = new Teacher();
-        teacher.setEmail(teacherEmail);
-        teacher.setName(teacherName);
-        teacher.setPassword(teacherPassword);
+        System.out.println(school.getName());
+        System.out.println(school.getId());
         
-        TeacherController teacherController = new TeacherController();
-        teacherController.save(teacher);
+        String studentName = name.getText();
+        String studentEmail = email.getText();
+        String studentPassword = password.getText();
+        String hashPassword = Base64.getEncoder().encodeToString(studentPassword.getBytes());
+        Class classSelected = className.getSelectionModel().getSelectedItem();
+
+        System.out.println(classSelected.getCapacityStudents() + " : " + classSelected.getClassroom());
+        Student student = new Student();
+        student.setEmail(studentEmail);
+        student.setName(studentName);
+        student.setPassword(hashPassword);
+        student.setClassId(classSelected);
+        student.setSchool(school);   
+        StudentController studentController = new StudentController();
+        studentController.save(student);
         
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Cadastro Realizado");
-        alert.setHeaderText("Professor " + teacherName + " cadastrado");
+        alert.setHeaderText("Estudante " + studentName + " cadastrado");
         alert.show();
         resetFields();
     }
@@ -63,7 +93,21 @@ public class Registration {
     
     @FXML
     public void setMain()  throws IOException {
-        System.out.println("testes");
         App.setRoot("secondary");
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        loadClass();
+    }
+    
+        
+    private void loadClass(){
+        ClassController classController = new ClassController();
+        List<Class> classList = classController.list();
+        
+        obsClass = FXCollections.observableArrayList(classList);
+        className.setItems(obsClass);
     }
 }

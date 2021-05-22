@@ -34,6 +34,20 @@ public class Student {
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "fk_school",nullable=false)
     private School school;
+    
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "fk_class", nullable=false)
+    private Class classId;
+
+    public Class getClassName() {
+        return classId;
+    }
+
+    public void setClassId(Class classId) {
+        this.classId = classId;
+    }
+    
+    
 
     public Integer getRegistrationCode() {
         return registrationCode;
@@ -55,8 +69,8 @@ public class Student {
         return school;
     }
 
-    public void setRegistrationCode(Integer registrationCode) {
-        this.registrationCode = registrationCode;
+    public Class getClassId() {
+        return classId;
     }
 
     public void setName(String name) {

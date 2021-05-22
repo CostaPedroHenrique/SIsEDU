@@ -55,7 +55,7 @@
                         <Font size="25.0" />
                      </font>
                   </TextField>
-                  <Text fill="WHITE" layoutX="5.0" layoutY="33.0" strokeMiterLimit="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula" wrappingWidth="164.13671875">
+                  <Text fill="WHITE" layoutX="5.0" layoutY="33.0" strokeMiterLimit="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" wrappingWidth="164.13671875">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -79,16 +79,25 @@
                       <toggleGroup>
                         <ToggleGroup fx:id="group" />
                     </toggleGroup>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
                   </RadioButton>
-                  <RadioButton fx:id="level2" layoutX="193.0" layoutY="306.0" mnemonicParsing="false" text="Professor" textFill="WHITE">
+                  <RadioButton fx:id="level2" layoutX="141.0" layoutY="307.0" mnemonicParsing="false" text="Professor" textFill="WHITE">
                       <toggleGroup>
                         <fx:reference source="group" />
                     </toggleGroup>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
                   </RadioButton>
-                  <RadioButton fx:id="level3" layoutX="357.0" layoutY="306.0" mnemonicParsing="false" text="Administrador" textFill="WHITE">
+                  <RadioButton fx:id="level3" layoutX="313.0" layoutY="307.0" mnemonicParsing="false" text="Administrador" textFill="WHITE">
                       <toggleGroup>
                         <fx:reference source="group" />
                     </toggleGroup>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
                   </RadioButton>
                </children>
             </Group>

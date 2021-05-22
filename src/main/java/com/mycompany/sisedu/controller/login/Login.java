@@ -45,8 +45,6 @@ public class Login {
         
         String hashPassword = Base64.getEncoder().encodeToString(passwordValue.getBytes());
 
-        System.out.println("senha crypto");
-        System.out.println(hashPassword);
          
         getAdmin(registrationValue, hashPassword);
     }

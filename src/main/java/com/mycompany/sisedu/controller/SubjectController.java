@@ -24,28 +24,24 @@ public class SubjectController {
         em.getTransaction().begin();
         em.persist(_subject);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public void delete(Subject _subject){
         em.getTransaction().begin();
         em.remove(_subject);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public void update(Subject _subject){
         em.getTransaction().begin();
         em.persist(_subject);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public List<Subject> list(){
         em.getTransaction().begin();
         Query search = em.createQuery("SELECT student FROM Student student");
         List<Subject> students = search.getResultList();
-        emf.close();
         
         return students; 
     }

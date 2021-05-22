@@ -28,7 +28,7 @@ public class School {
     @JoinColumn(name = "fk_adress",nullable=false)
     private Adress adress;
     
-    @Column(name="phoneNumber")
+    @Column(name="phonenumber")
     private String phoneNumber;
     
     @Column(name = "name")

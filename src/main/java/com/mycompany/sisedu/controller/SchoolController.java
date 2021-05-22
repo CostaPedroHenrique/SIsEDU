@@ -24,35 +24,30 @@ public class SchoolController {
         em.getTransaction().begin();
         em.persist(_school);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public void delete(School _school){
         em.getTransaction().begin();
         em.remove(_school);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public void update(School _school){
         em.getTransaction().begin();
         em.persist(_school);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public List<School> list(){
         em.getTransaction().begin();
         Query search = em.createQuery("SELECT school FROM School school");
         List<School> schools = search.getResultList();
-        emf.close();
         
         return schools; 
     }
     
     public School find( int id){
         School school = em.find(School.class, id);
- 
         return school;
     }
 }

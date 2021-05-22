@@ -24,28 +24,24 @@ public class ClassController {
         em.getTransaction().begin();
         em.persist(_class);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public void delete(Class _class){
         em.getTransaction().begin();
         em.remove(_class);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public void update(Class _class){
         em.getTransaction().begin();
         em.persist(_class);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public List<Class> list(){
         em.getTransaction().begin();
-        Query search = em.createQuery("SELECT class FROM Class class");
+        Query search = em.createQuery("SELECT turma FROM Class turma");
         List<Class> classes = search.getResultList();
-        emf.close();
         
         return classes; 
     }

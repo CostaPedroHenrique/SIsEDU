@@ -11,11 +11,11 @@ import javax.persistence.Query;
  *
  * @author pedrohenrique
  */
-public class StudentProvider {
+public class StudentController {
     EntityManagerFactory emf;
     EntityManager em;
     
-    public StudentProvider(){
+    public StudentController(){
         emf = Persistence.createEntityManagerFactory("SisEDU");
         em = emf.createEntityManager();
     }
@@ -24,28 +24,24 @@ public class StudentProvider {
         em.getTransaction().begin();
         em.persist(_students);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public void delete(Student _students){
         em.getTransaction().begin();
         em.remove(_students);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public void update(Student _students){
         em.getTransaction().begin();
         em.persist(_students);
         em.getTransaction().commit();
-        emf.close();
     }
     
     public List<Student> list(){
         em.getTransaction().begin();
         Query search = em.createQuery("SELECT student FROM Student student");
         List<Student> students = search.getResultList();
-        emf.close();
         
         return students; 
     }
