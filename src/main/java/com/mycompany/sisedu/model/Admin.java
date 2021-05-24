@@ -18,7 +18,6 @@ import javax.persistence.Table;
 @Table(name="administrator")
 public class Admin {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Integer id;
     
     @Column(name="name")

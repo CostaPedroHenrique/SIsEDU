@@ -5,9 +5,9 @@ import com.mycompany.sisedu.App;
 import com.mycompany.sisedu.App;
 import com.mycompany.sisedu.controller.ClassController;
 import com.mycompany.sisedu.controller.SchoolController;
-import com.mycompany.sisedu.controller.StudentController;
+import com.mycompany.sisedu.controller.StudantController;
 import com.mycompany.sisedu.controller.TeacherController;
-import com.mycompany.sisedu.model.Student;
+import com.mycompany.sisedu.model.Studant;
 import com.mycompany.sisedu.model.Teacher;
 import com.mycompany.sisedu.model.Class;
 import com.mycompany.sisedu.model.School;
@@ -49,27 +49,21 @@ public class Registration implements Initializable{
     private ObservableList<Class> obsClass;
 
     @FXML
-    void save() {
-        SchoolController schoolController = new SchoolController();
-        School school = schoolController.find(1);
-        
-        System.out.println(school.getName());
-        System.out.println(school.getId());
-        
+    private void save() {    
         String studentName = name.getText();
         String studentEmail = email.getText();
         String studentPassword = password.getText();
         String hashPassword = Base64.getEncoder().encodeToString(studentPassword.getBytes());
         Class classSelected = className.getSelectionModel().getSelectedItem();
-
-        System.out.println(classSelected.getCapacityStudents() + " : " + classSelected.getClassroom());
-        Student student = new Student();
+        
+        Studant student = new Studant();
+        
         student.setEmail(studentEmail);
         student.setName(studentName);
         student.setPassword(hashPassword);
-        student.setClassId(classSelected);
-        student.setSchool(school);   
-        StudentController studentController = new StudentController();
+        student.setClassId(classSelected);  
+        
+        StudantController studentController = new StudantController();
         studentController.save(student);
         
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

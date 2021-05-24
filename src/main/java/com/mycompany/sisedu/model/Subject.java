@@ -18,7 +18,6 @@ import javax.persistence.Table;
 @Table(name="subject")
 public class Subject {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Integer registrationCode;
     
     @Column(name="workload")

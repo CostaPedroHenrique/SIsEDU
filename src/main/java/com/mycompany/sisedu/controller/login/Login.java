@@ -3,7 +3,7 @@ package com.mycompany.sisedu.controller.login;
 import com.mycompany.sisedu.App;
 import com.mycompany.sisedu.controller.AdminController;
 import com.mycompany.sisedu.model.Admin;
-import com.mycompany.sisedu.model.Student;
+import com.mycompany.sisedu.model.Studant;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;

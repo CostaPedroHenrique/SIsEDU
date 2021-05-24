@@ -20,7 +20,6 @@ import javax.persistence.Table;
 @Table(name="adress")
 public class Adress {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long id;
     
     @Column(name="city")

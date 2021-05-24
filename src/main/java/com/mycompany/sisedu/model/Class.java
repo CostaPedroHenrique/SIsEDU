@@ -68,6 +68,10 @@ public class Class {
         this.shift = shift;
     }
 
+    public void setRegistrationCode(Integer registrationCode) {
+        this.registrationCode = registrationCode;
+    }
+
     public void setActive(boolean active) {
         this.active = active;
     }

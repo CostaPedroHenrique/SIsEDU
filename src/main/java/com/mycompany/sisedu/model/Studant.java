@@ -16,11 +16,10 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="student")
-public class Student {
+@Table(name="studant")
+public class Studant {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
-    private Integer registrationCode;
+    private Integer registrationcode;
     
     @Column(name="name")
     private String name;
@@ -32,25 +31,15 @@ public class Student {
     private String password;
     
     @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "fk_school",nullable=false)
-    private School school;
-    
-    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "fk_class", nullable=false)
     private Class classId;
-
-    public Class getClassName() {
-        return classId;
-    }
 
     public void setClassId(Class classId) {
         this.classId = classId;
     }
-    
-    
 
     public Integer getRegistrationCode() {
-        return registrationCode;
+        return registrationcode;
     }
 
     public String getName() {
@@ -63,10 +52,6 @@ public class Student {
 
     public String getPassword() {
         return password;
-    }
-
-    public School getSchool() {
-        return school;
     }
 
     public Class getClassId() {
@@ -83,10 +68,6 @@ public class Student {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public void setSchool(School school) {
-        this.school = school;
     }
   
 }

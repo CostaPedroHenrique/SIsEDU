@@ -1,6 +1,6 @@
 package com.mycompany.sisedu.controller;
 
-import com.mycompany.sisedu.model.Student;
+import com.mycompany.sisedu.model.Studant;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,43 +11,43 @@ import javax.persistence.Query;
  *
  * @author pedrohenrique
  */
-public class StudentController {
+public class StudantController {
     EntityManagerFactory emf;
     EntityManager em;
     
-    public StudentController(){
+    public StudantController(){
         emf = Persistence.createEntityManagerFactory("SisEDU");
         em = emf.createEntityManager();
     }
     
-    public void save(Student _students){
+    public void save(Studant _studants){
         em.getTransaction().begin();
-        em.persist(_students);
+        em.persist(_studants);
         em.getTransaction().commit();
     }
     
-    public void delete(Student _students){
+    public void delete(Studant _students){
         em.getTransaction().begin();
         em.remove(_students);
         em.getTransaction().commit();
     }
     
-    public void update(Student _students){
+    public void update(Studant _students){
         em.getTransaction().begin();
         em.persist(_students);
         em.getTransaction().commit();
     }
     
-    public List<Student> list(){
+    public List<Studant> list(){
         em.getTransaction().begin();
-        Query search = em.createQuery("SELECT student FROM Student student");
-        List<Student> students = search.getResultList();
+        Query search = em.createQuery("SELECT studant FROM Studant studant");
+        List<Studant> students = search.getResultList();
         
         return students; 
     }
     
-    public Student find( int id){
-        Student student = em.find(Student.class, id);
+    public Studant find( int id){
+        Studant student = em.find(Studant.class, id);
  
         return student;
     }
