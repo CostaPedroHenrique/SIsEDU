@@ -33,8 +33,9 @@
 -->
 
 <?import javafx.scene.Group?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -48,13 +49,13 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" fill="#e5e5e5" height="720.0" layoutX="-3.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
+            <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" fill="#e0e0e00d" height="720.0" layoutX="-3.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
             <Group layoutY="-12.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="726.0" layoutX="1.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" width="315.0" />
                   <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="27.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Telas%20projeto/Images/escola.png" />
+                        <Image url="@Images/escola.png" />
                      </image>
                      <effect>
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
@@ -68,7 +69,7 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="6.0" layoutX="3.0" layoutY="217.0" stroke="BLACK" strokeType="INSIDE" width="310.0" />
                   <ImageView fitHeight="70.0" fitWidth="40.0" layoutX="25.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Telas%20projeto/Images/turma.png" />
+                        <Image url="@Images/turma.png" />
                      </image>
                      <effect>
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
@@ -81,7 +82,7 @@
                   </Text>
                   <ImageView fitHeight="70.0" fitWidth="40.0" layoutX="24.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Telas%20projeto/Images/estudante.png" />
+                        <Image url="@Images/estudante.png" />
                      </image>
                      <effect>
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
@@ -94,7 +95,7 @@
                   </Text>
                   <ImageView fitHeight="70.0" fitWidth="40.0" layoutX="23.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Telas%20projeto/Images/prof.png" />
+                        <Image url="@Images/prof.png" />
                      </image>
                      <effect>
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
@@ -107,7 +108,7 @@
                   </Text>
                   <ImageView fitHeight="70.0" fitWidth="40.0" layoutX="30.0" layoutY="657.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Telas%20projeto/Images/sair.png" />
+                        <Image url="@Images/sair.png" />
                      </image>
                      <effect>
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
@@ -120,39 +121,57 @@
                   </Text>
                </children>
             </Group>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="251.0" layoutX="338.0" layoutY="98.0" stroke="BLACK" strokeType="INSIDE" width="446.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="251.0" layoutX="805.0" layoutY="97.0" stroke="BLACK" strokeType="INSIDE" width="446.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="310.0" layoutX="451.0" layoutY="373.0" stroke="BLACK" strokeType="INSIDE" width="691.0" />
-            <Text fill="WHITE" layoutX="445.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciar Turmas" textAlignment="CENTER">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="671.0" layoutX="346.0" layoutY="26.0" stroke="BLACK" strokeType="INSIDE" width="908.0" />
+            <Text fill="WHITE" layoutX="388.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar Novo Aluno" textAlignment="CENTER">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font name="System Bold" size="25.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="453.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastradas: 50" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="886.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciar Professores" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="919.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrados: 50" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Text>
-            <TableView layoutX="517.0" layoutY="409.0" prefHeight="233.0" prefWidth="542.0" stylesheets="@css/table.css">
-              <columns>
-                <TableColumn prefWidth="75.0" text="Aluno" />
-                <TableColumn prefWidth="75.0" text="Turma" />
-                  <TableColumn prefWidth="75.0" text="Função" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="5.0" layoutX="352.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="896.0" />
+            <Group layoutX="388.0" layoutY="172.0">
+               <children>
+                  <TextField layoutY="43.0" prefHeight="39.0" prefWidth="400.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Text fill="WHITE" layoutX="3.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Text>
+                  <TextField layoutY="136.0" prefHeight="39.0" prefWidth="400.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Text fill="WHITE" layoutX="2.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="3.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="68.0" layoutY="292.0" mnemonicParsing="false" onAction="#login" prefHeight="72.0" prefWidth="269.0" style="-fx-background-color: #E77D00;" text="CADASTRAR" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <PasswordField layoutX="2.0" layoutY="232.0" prefHeight="39.0" prefWidth="400.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </PasswordField>
+               </children>
+            </Group>
+            <ImageView fitHeight="305.0" fitWidth="394.0" layoutX="872.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Professor-amico.png" />
+               </image>
+            </ImageView>
       </children>
     </AnchorPane>
   </children>
