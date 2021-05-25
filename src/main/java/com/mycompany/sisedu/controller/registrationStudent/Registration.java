@@ -56,15 +56,23 @@ public class Registration implements Initializable{
         String hashPassword = Base64.getEncoder().encodeToString(studentPassword.getBytes());
         Class classSelected = className.getSelectionModel().getSelectedItem();
         
-        Studant student = new Studant();
+        Studant studant = new Studant();
         
-        student.setEmail(studentEmail);
-        student.setName(studentName);
-        student.setPassword(hashPassword);
-        student.setClassId(classSelected);  
+        studant.setEmail(studentEmail);
+        studant.setName(studentName);
+        studant.setPassword(hashPassword);
+        studant.setClassId(classSelected);  
         
         StudantController studentController = new StudantController();
-        studentController.save(student);
+        System.out.println("#########################################################");
+        System.out.println(studant.getRegistrationCode());
+        System.out.println(studant.getName());
+        System.out.println(studant.getEmail());
+        System.out.println(studant.getPassword());
+        System.out.println(studant.getClassId().getClassroom());
+
+
+        studentController.save(studant);
         
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Cadastro Realizado");

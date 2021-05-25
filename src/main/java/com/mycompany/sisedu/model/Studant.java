@@ -19,6 +19,7 @@ import javax.persistence.Table;
 @Table(name="studant")
 public class Studant {
     @Id
+    @GeneratedValue
     private Integer registrationcode;
     
     @Column(name="name")

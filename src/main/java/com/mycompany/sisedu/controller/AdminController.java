@@ -24,8 +24,10 @@ public class AdminController {
     }
     
     public void save(Admin _admin){
-        em.getTransaction().begin();
-        if(_admin.getId()>0){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        };
+        if(_admin.getId() != null){
             _admin = em.merge(_admin);
         }
         em.persist(_admin);
@@ -34,7 +36,9 @@ public class AdminController {
     }
     
     public void delete(Admin _admin){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         em.remove(_admin);
         em.getTransaction().commit();
 
@@ -42,7 +46,9 @@ public class AdminController {
     
     
     public List<Admin> list(){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         Query search = em.createQuery("SELECT admin FROM Admin admin");
         List<Admin> admins = search.getResultList();
 
@@ -50,9 +56,10 @@ public class AdminController {
     }
     
     public List<Admin> find( String registration, String password) throws UnsupportedEncodingException{
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         String jpql = "SELECT admin FROM Admin admin where email= '".concat(registration).concat("' and password= '").concat(password).concat("'");
-        System.out.println(jpql);
         TypedQuery<Admin> typedQuery =  em.createQuery(jpql, Admin.class);
         List<Admin> admins = typedQuery.getResultList();
 
@@ -60,6 +67,9 @@ public class AdminController {
     }
     
     public Admin find( int id){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         Admin admin = em.find(Admin.class, id);
  
         return admin;

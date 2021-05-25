@@ -20,8 +20,10 @@ public class SubjectController {
     }
     
     public void save(Subject _subject){
-        em.getTransaction().begin();
-        if(_subject.getRegistrationCode()>0){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        if(_subject.getRegistrationCode() != null){
             _subject = em.merge(_subject);
         }
         em.persist(_subject);
@@ -29,19 +31,18 @@ public class SubjectController {
     }
     
     public void delete(Subject _subject){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         em.remove(_subject);
         em.getTransaction().commit();
     }
     
-    public void update(Subject _subject){
-        em.getTransaction().begin();
-        em.persist(_subject);
-        em.getTransaction().commit();
-    }
     
     public List<Subject> list(){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         Query search = em.createQuery("SELECT student FROM Student student");
         List<Subject> students = search.getResultList();
         

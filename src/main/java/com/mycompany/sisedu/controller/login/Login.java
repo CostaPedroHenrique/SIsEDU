@@ -12,6 +12,8 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -45,15 +47,26 @@ public class Login {
         
         String hashPassword = Base64.getEncoder().encodeToString(passwordValue.getBytes());
 
-         
-        getAdmin(registrationValue, hashPassword);
+        if(emailIsValid(registrationValue)){
+            getAdmin(registrationValue, hashPassword);        
+        }
+        else{
+            emailInvalid();
+        }
     }
 
     private void accessDanieded(){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Acesso negado");
         alert.setHeaderText("Verifique se os dados inseridos estão corretos");
-        alert.setContentText("Verifique se marcou o tipo de usuário correto");
+        alert.setContentText("Verifique se o email é válido");
+        alert.show();
+    }
+    
+    private void emailInvalid(){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Acesso negado");
+        alert.setHeaderText("Email inválido");
         alert.show();
     }
     
@@ -70,7 +83,7 @@ public class Login {
         List<Admin> admins;
         AdminController controller = new AdminController();
         admins = controller.find( registration, password );
-        if (admins.size() > 0) {
+        if (admins.size() > 0 ) {
             Admin admin = admins.get(0);
             App.setRoot("secondary");
             
@@ -79,6 +92,17 @@ public class Login {
             accessDanieded();
         }
         
+    }
+    
+    
+    private boolean emailIsValid(String email){
+        String regex = "^(.+)@(.+)$";
+ 
+        Pattern pattern = Pattern.compile(regex);
+        
+        Matcher matcher = pattern.matcher(email);
+
+        return matcher.matches();
     }
     
 

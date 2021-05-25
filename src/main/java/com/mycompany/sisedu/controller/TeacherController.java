@@ -17,8 +17,10 @@ public class TeacherController {
     }
     
     public void save(Teacher _teacher){
-        em.getTransaction().begin();
-        if(_teacher.getId()>0){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        if(_teacher.getId() != null){
             _teacher = em.merge(_teacher);
         }
         em.persist(_teacher);
@@ -26,19 +28,17 @@ public class TeacherController {
     }
     
     public void delete(Teacher _teacher){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         em.remove(_teacher);
         em.getTransaction().commit();
     }
     
-    public void update(Teacher _teacher){
-        em.getTransaction().begin();
-        em.persist(_teacher);
-        em.getTransaction().commit();
-    }
-    
     public List<Teacher> list(){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         Query search = em.createQuery("SELECT teacher FROM Teacher teacher");
         List<Teacher> teachers = search.getResultList();
         
@@ -47,7 +47,9 @@ public class TeacherController {
     
 //    Irei terminar algum dia
     public List<Teacher> find( String registration, String password){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         String query = "SELECT teacher FROM Teacher teacher where  email=".concat(registration).concat("and password=").concat(password);
         Query search = em.createQuery(query);
         List<Teacher> teachers = search.getResultList();
@@ -56,6 +58,9 @@ public class TeacherController {
     }
     
     public Teacher find( int id){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         Teacher teacher = em.find(Teacher.class, id);
  
         return teacher;

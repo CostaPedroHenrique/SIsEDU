@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Table(name="school")
 public class School {
     @Id
-    private int id;
+    private Integer id;
     
     @Column(name="cnpj")
     private String cnpj;
@@ -34,7 +34,7 @@ public class School {
     @Column(name = "name")
     private String name;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -20,8 +20,10 @@ public class StudantController {
     }
     
     public void save(Studant _studant){
-        em.getTransaction().begin();
-        if(_studant.getRegistrationCode()>0){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        if(_studant.getRegistrationCode() != null){
             _studant = em.merge(_studant);
         }
         em.persist(_studant);
@@ -29,13 +31,17 @@ public class StudantController {
     }
     
     public void delete(Studant _students){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         em.remove(_students);
         em.getTransaction().commit();
     }
     
     public List<Studant> list(){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         Query search = em.createQuery("SELECT studant FROM Studant studant");
         List<Studant> students = search.getResultList();
         
@@ -43,6 +49,9 @@ public class StudantController {
     }
     
     public Studant find( int id){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         Studant student = em.find(Studant.class, id);
  
         return student;

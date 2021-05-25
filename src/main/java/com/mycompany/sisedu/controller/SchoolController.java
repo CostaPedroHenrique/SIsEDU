@@ -20,8 +20,10 @@ public class SchoolController {
     }
     
     public void save(School _school){
-        em.getTransaction().begin();
-        if(_school.getId()>0){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        if(_school.getId() != null){
             _school = em.merge(_school);
         }
         em.persist(_school);
@@ -29,13 +31,17 @@ public class SchoolController {
     }
     
     public void delete(School _school){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         em.remove(_school);
         em.getTransaction().commit();
     }
     
     public List<School> list(){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         Query search = em.createQuery("SELECT school FROM School school");
         List<School> schools = search.getResultList();
         
@@ -43,6 +49,9 @@ public class SchoolController {
     }
     
     public School find( int id){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         School school = em.find(School.class, id);
         return school;
     }

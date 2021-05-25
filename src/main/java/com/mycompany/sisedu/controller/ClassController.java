@@ -20,8 +20,10 @@ public class ClassController {
     }
     
     public void save(Class _class){
-        em.getTransaction().begin();
-        if(_class.getRegistrationCode()>0){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        if(_class.getRegistrationCode() != null){
             _class = em.merge(_class);
         }
         em.persist(_class);
@@ -29,13 +31,17 @@ public class ClassController {
     }
     
     public void delete(Class _class){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         em.remove(_class);
         em.getTransaction().commit();
     }
     
     public List<Class> list(){
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         Query search = em.createQuery("SELECT turma FROM Class turma");
         List<Class> classes = search.getResultList();
         
@@ -43,6 +49,9 @@ public class ClassController {
     }
     
     public Class find( int id){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
         Class _class = em.find(Class.class, id);
  
         return _class;
