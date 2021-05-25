@@ -2,6 +2,7 @@ package com.mycompany.sisedu.controller;
 
 import com.mycompany.sisedu.model.Admin;
 import com.mycompany.sisedu.model.Teacher;
+import com.mycompany.sisedu.services.Manager;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -14,17 +15,19 @@ import javax.persistence.TypedQuery;
  *
  * @author pedrohenrique
  */
-public class AdminController {
-    EntityManagerFactory emf;
-    EntityManager em;
+public class AdminController {   
+
+    private EntityManager em;
     
     public AdminController(){
-        emf = Persistence.createEntityManagerFactory("SisEDU");
-        em = emf.createEntityManager();
+        em = Manager.getInstance().getEm();
     }
     
     public void save(Admin _admin){
         em.getTransaction().begin();
+        if(_admin.getId()>0){
+            _admin = em.merge(_admin);
+        }
         em.persist(_admin);
         em.getTransaction().commit();
 
@@ -37,19 +40,12 @@ public class AdminController {
 
     }
     
-    public void update(Admin _admin){
-        em.getTransaction().begin();
-        em.persist(_admin);
-        em.getTransaction().commit();
-;
-    }
     
     public List<Admin> list(){
         em.getTransaction().begin();
         Query search = em.createQuery("SELECT admin FROM Admin admin");
         List<Admin> admins = search.getResultList();
 
-        
         return admins; 
     }
     

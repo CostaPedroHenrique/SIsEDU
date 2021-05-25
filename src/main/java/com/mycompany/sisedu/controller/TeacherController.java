@@ -1,6 +1,7 @@
 package com.mycompany.sisedu.controller;
 
 import com.mycompany.sisedu.model.Teacher;
+import com.mycompany.sisedu.services.Manager;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -9,16 +10,17 @@ import javax.persistence.Query;
 
 
 public class TeacherController {
-    EntityManagerFactory emf;
-    EntityManager em;
+    private EntityManager em;
     
     public TeacherController(){
-        emf = Persistence.createEntityManagerFactory("SisEDU");
-        em = emf.createEntityManager();
+        em = Manager.getInstance().getEm();
     }
     
     public void save(Teacher _teacher){
         em.getTransaction().begin();
+        if(_teacher.getId()>0){
+            _teacher = em.merge(_teacher);
+        }
         em.persist(_teacher);
         em.getTransaction().commit();
     }

@@ -1,6 +1,7 @@
 package com.mycompany.sisedu.controller;
 
 import com.mycompany.sisedu.model.Class;
+import com.mycompany.sisedu.services.Manager;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,16 +13,17 @@ import javax.persistence.Query;
  * @author pedrohenrique
  */
 public class ClassController {
-    EntityManagerFactory emf;
-    EntityManager em;
+    private EntityManager em;
     
     public ClassController(){
-        emf = Persistence.createEntityManagerFactory("SisEDU");
-        em = emf.createEntityManager();
+        em = Manager.getInstance().getEm();
     }
     
     public void save(Class _class){
         em.getTransaction().begin();
+        if(_class.getRegistrationCode()>0){
+            _class = em.merge(_class);
+        }
         em.persist(_class);
         em.getTransaction().commit();
     }
@@ -29,12 +31,6 @@ public class ClassController {
     public void delete(Class _class){
         em.getTransaction().begin();
         em.remove(_class);
-        em.getTransaction().commit();
-    }
-    
-    public void update(Class _class){
-        em.getTransaction().begin();
-        em.persist(_class);
         em.getTransaction().commit();
     }
     

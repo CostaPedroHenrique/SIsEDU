@@ -18,6 +18,7 @@ import javax.persistence.Table;
 @Table(name="administrator")
 public class Admin {
     @Id
+    @Column(name="id")
     private Integer id;
     
     @Column(name="name")
