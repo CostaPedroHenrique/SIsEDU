@@ -60,6 +60,7 @@ public class AdminController {
             em.getTransaction().begin();
         }
         String jpql = "SELECT admin FROM Admin admin where email= '".concat(registration).concat("' and password= '").concat(password).concat("'");
+        System.out.println(jpql);
         TypedQuery<Admin> typedQuery =  em.createQuery(jpql, Admin.class);
         List<Admin> admins = typedQuery.getResultList();
 

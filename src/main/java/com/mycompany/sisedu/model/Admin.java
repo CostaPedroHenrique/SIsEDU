@@ -18,6 +18,7 @@ import javax.persistence.Table;
 @Table(name="administrator")
 public class Admin {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
     

@@ -17,9 +17,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="studant")
-public class Studant {
+public class Student {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer registrationcode;
     
     @Column(name="name")

@@ -19,6 +19,7 @@ import javax.persistence.Table;
 @Table(name="school")
 public class School {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     
     @Column(name="cnpj")

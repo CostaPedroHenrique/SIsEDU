@@ -18,6 +18,7 @@ import javax.persistence.Table;
 @Table(name="class")
 public class Class {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer registrationCode;
 
     @Column(name="shift")

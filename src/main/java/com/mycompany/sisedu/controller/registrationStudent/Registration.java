@@ -5,9 +5,9 @@ import com.mycompany.sisedu.App;
 import com.mycompany.sisedu.App;
 import com.mycompany.sisedu.controller.ClassController;
 import com.mycompany.sisedu.controller.SchoolController;
-import com.mycompany.sisedu.controller.StudantController;
+import com.mycompany.sisedu.controller.StudentController;
 import com.mycompany.sisedu.controller.TeacherController;
-import com.mycompany.sisedu.model.Studant;
+import com.mycompany.sisedu.model.Student;
 import com.mycompany.sisedu.model.Teacher;
 import com.mycompany.sisedu.model.Class;
 import com.mycompany.sisedu.model.School;
@@ -56,14 +56,14 @@ public class Registration implements Initializable{
         String hashPassword = Base64.getEncoder().encodeToString(studentPassword.getBytes());
         Class classSelected = className.getSelectionModel().getSelectedItem();
         
-        Studant studant = new Studant();
+        Student studant = new Student();
         
         studant.setEmail(studentEmail);
         studant.setName(studentName);
         studant.setPassword(hashPassword);
         studant.setClassId(classSelected);  
         
-        StudantController studentController = new StudantController();
+        StudentController studentController = new StudentController();
         System.out.println("#########################################################");
         System.out.println(studant.getRegistrationCode());
         System.out.println(studant.getName());
@@ -88,9 +88,15 @@ public class Registration implements Initializable{
     }
     
     @FXML
-    public void setView()  throws IOException {
+    public void setAddClass()  throws IOException {
         System.out.println("testes");
-        App.setRoot("registrationStudent");
+        App.setRoot("registrationClass");
+    }
+    
+    @FXML
+    public void setAddTeacher()  throws IOException {
+        System.out.println("testes");
+        App.setRoot("registrationTeacher");
     }
     
     @FXML

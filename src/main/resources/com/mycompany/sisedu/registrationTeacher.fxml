@@ -99,12 +99,12 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <Button layoutX="78.0" layoutY="269.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Turmas" textFill="WHITE">
+                  <Button layoutX="78.0" layoutY="269.0" mnemonicParsing="false" onAction="#setAddClass" style="-fx-background-color: transparent;" text="Turmas" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="students" layoutX="80.0" layoutY="330.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Alunos" textFill="WHITE">
+                  <Button fx:id="students" layoutX="80.0" layoutY="330.0" mnemonicParsing="false" onAction="#setAddStudent" style="-fx-background-color: transparent;" text="Alunos" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>

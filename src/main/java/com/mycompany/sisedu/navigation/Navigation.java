@@ -2,10 +2,10 @@ package com.mycompany.sisedu.navigation;
 
 import com.mycompany.sisedu.App;
 import com.mycompany.sisedu.controller.ClassController;
-import com.mycompany.sisedu.controller.StudantController;
+import com.mycompany.sisedu.controller.StudentController;
 import com.mycompany.sisedu.controller.TeacherController;
 import com.mycompany.sisedu.model.Class;
-import com.mycompany.sisedu.model.Studant;
+import com.mycompany.sisedu.model.Student;
 import com.mycompany.sisedu.model.Teacher;
 
 import java.io.IOException;
@@ -33,15 +33,18 @@ public class Navigation implements Initializable {
     private Text teacherLenght;
     
     @FXML
-    private TableView<Studant> tableMain;
+    private TableView<Student> tableMain;
 
     @FXML
-    private TableColumn<Studant, String> tableStudantName;
+    private TableColumn<Student, String> tableStudantName;
     
     @FXML
-    private TableColumn<Studant, String> tableStudantEmail;
+    private TableColumn<Student, String> tableStudantEmail;
+    
+    @FXML
+    private TableColumn<Student, String> tableClass;
 
-    ObservableList<Studant> studentList;
+    ObservableList<Student> studentList;
     
     @FXML
     public void setViewCreateStudent()  throws IOException {
@@ -52,6 +55,11 @@ public class Navigation implements Initializable {
     @FXML
     public void setViewCreateTeacher()  throws IOException {
         App.setRoot("registrationTeacher");
+    }
+    
+    @FXML
+    public void setViewCreateClass()  throws IOException {
+        App.setRoot("registrationClass");
     }
     
     
@@ -76,8 +84,9 @@ public class Navigation implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         getElementTable();
-        tableStudantName.setCellValueFactory(new PropertyValueFactory<Studant, String>("name"));
-        tableStudantEmail.setCellValueFactory(new PropertyValueFactory<Studant, String>("email"));
+        tableStudantName.setCellValueFactory(new PropertyValueFactory<Student, String>("name"));
+        tableStudantEmail.setCellValueFactory(new PropertyValueFactory<Student, String>("email"));
+        tableClass.setCellValueFactory(new PropertyValueFactory<Student, String>("classId"));
         
         tableMain.setItems(studentList);
 
@@ -86,8 +95,8 @@ public class Navigation implements Initializable {
     }
     
     private void getElementTable() {
-        StudantController studentController = new StudantController();
-        List<Studant> studantList = studentController.list();
+        StudentController studentController = new StudentController();
+        List<Student> studantList = studentController.list();
         studentList = FXCollections.observableArrayList(studantList);
     }
 }

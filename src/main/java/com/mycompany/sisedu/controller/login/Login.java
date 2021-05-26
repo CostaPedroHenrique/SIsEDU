@@ -2,8 +2,11 @@ package com.mycompany.sisedu.controller.login;
 
 import com.mycompany.sisedu.App;
 import com.mycompany.sisedu.controller.AdminController;
+import com.mycompany.sisedu.controller.StudentController;
+import com.mycompany.sisedu.controller.TeacherController;
 import com.mycompany.sisedu.model.Admin;
-import com.mycompany.sisedu.model.Studant;
+import com.mycompany.sisedu.model.Student;
+import com.mycompany.sisedu.model.Teacher;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
@@ -92,6 +95,36 @@ public class Login {
             accessDanieded();
         }
         
+    }
+    
+    private void getTeacher( String registration, String password ) throws IOException{
+        int i;
+        List<Teacher> teachers;
+        TeacherController controller = new TeacherController();
+        teachers = controller.find( registration, password );
+        if (teachers.size() > 0 ) {
+            Teacher teacher = teachers.get(0);
+            App.setRoot("secondary");
+            
+        }
+        else {
+            accessDanieded();
+        } 
+    }
+    
+    private void getStudent( String registration, String password ) throws IOException{
+        int i;
+        List<Student> students;
+        StudentController controller = new StudentController();
+        students = controller.find( registration, password );
+        if (students.size() > 0 ) {
+            Student student = students.get(0);
+            App.setRoot("secondary");
+            
+        }
+        else {
+            accessDanieded();
+        } 
     }
     
     

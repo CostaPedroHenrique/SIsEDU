@@ -1,25 +1,26 @@
 package com.mycompany.sisedu.controller;
 
-import com.mycompany.sisedu.model.Studant;
+import com.mycompany.sisedu.model.Student;
 import com.mycompany.sisedu.services.Manager;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 /**
  *
  * @author pedrohenrique
  */
-public class StudantController {
+public class StudentController {
     private EntityManager em;
     
-    public StudantController(){
+    public StudentController(){
         em = Manager.getInstance().getEm();
     }
     
-    public void save(Studant _studant){
+    public void save(Student _studant){
         if(!em.getTransaction().isActive()){
             em.getTransaction().begin();
         }
@@ -30,7 +31,7 @@ public class StudantController {
         em.getTransaction().commit();
     }
     
-    public void delete(Studant _students){
+    public void delete(Student _students){
         if(!em.getTransaction().isActive()){
             em.getTransaction().begin();
         }
@@ -38,21 +39,33 @@ public class StudantController {
         em.getTransaction().commit();
     }
     
-    public List<Studant> list(){
+    public List<Student> list(){
         if(!em.getTransaction().isActive()){
             em.getTransaction().begin();
         }
-        Query search = em.createQuery("SELECT studant FROM Studant studant");
-        List<Studant> students = search.getResultList();
+        Query search = em.createQuery("SELECT studant FROM Student studant");
+        List<Student> students = search.getResultList();
         
         return students; 
     }
     
-    public Studant find( int id){
+        public List<Student> find( String registration, String password) {
         if(!em.getTransaction().isActive()){
             em.getTransaction().begin();
         }
-        Studant student = em.find(Studant.class, id);
+        String jpql = "SELECT student FROM Student student where email= '".concat(registration).concat("' and password= '").concat(password).concat("'");
+        System.out.println(jpql);
+        TypedQuery<Student> typedQuery =  em.createQuery(jpql, Student.class);
+        List<Student> students = typedQuery.getResultList();
+
+        return students;
+    }
+    
+    public Student find( int id){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        Student student = em.find(Student.class, id);
  
         return student;
     }
