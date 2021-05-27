@@ -88,15 +88,15 @@ public class Registration implements Initializable{
     }
     
     @FXML
-    public void setAddClass()  throws IOException {
+    public void setManageClass()  throws IOException {
         System.out.println("testes");
-        App.setRoot("registrationClass");
+        App.setRoot("manageClass");
     }
     
     @FXML
-    public void setAddTeacher()  throws IOException {
+    public void setManageTeacher()  throws IOException {
         System.out.println("testes");
-        App.setRoot("registrationTeacher");
+        App.setRoot("manageTeacher");
     }
     
     @FXML

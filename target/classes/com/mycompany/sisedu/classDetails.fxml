@@ -36,6 +36,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -49,10 +50,10 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" fill="#e0e0e00d" height="720.0" layoutX="-3.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
+            <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" fill="#e0e0e00d" height="720.0" layoutX="-3.0" layoutY="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
             <Group layoutY="-12.0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="726.0" layoutX="1.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" width="315.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="726.0" layoutY="7.0" stroke="TRANSPARENT" strokeType="INSIDE" width="315.0" />
                   <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="27.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/escola.png" />
@@ -61,26 +62,13 @@
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
                      </effect>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="108.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome da escola" textAlignment="CENTER">
+                  <Text fill="WHITE" layoutX="108.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UFERSA" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </Text>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="6.0" layoutX="3.0" layoutY="217.0" stroke="BLACK" strokeType="INSIDE" width="310.0" />
-                  <ImageView fitHeight="70.0" fitWidth="40.0" layoutX="25.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Images/turma.png" />
-                     </image>
-                     <effect>
-                        <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
-                     </effect>
-                  </ImageView>
-                  <Text accessibleRole="BUTTON" fill="WHITE" layoutX="85.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turmas" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Text>
-                  <ImageView fitHeight="70.0" fitWidth="40.0" layoutX="24.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="70.0" fitWidth="40.0" layoutX="24.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/estudante.png" />
                      </image>
@@ -88,20 +76,7 @@
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
                      </effect>
                   </ImageView>
-                  <Text accessibleRole="BUTTON" fill="WHITE" layoutX="87.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alunos" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Text>
-                  <ImageView fitHeight="70.0" fitWidth="40.0" layoutX="23.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Images/prof.png" />
-                     </image>
-                     <effect>
-                        <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
-                     </effect>
-                  </ImageView>
-                  <Text accessibleRole="BUTTON" fill="WHITE" layoutX="85.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Professores" textAlignment="CENTER">
+                  <Text accessibleRole="BUTTON" fill="WHITE" layoutX="87.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alunos" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
@@ -123,32 +98,72 @@
             </Group>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="671.0" layoutX="346.0" layoutY="26.0" stroke="BLACK" strokeType="INSIDE" width="908.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="5.0" layoutX="352.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="896.0" />
-            <Text fill="WHITE" layoutX="386.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turma:" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="386.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turma:" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <TableView layoutX="360.0" layoutY="141.0" prefHeight="415.0" prefWidth="879.0">
+            <TableView layoutX="360.0" layoutY="141.0" prefHeight="406.0" prefWidth="879.0" stylesheets="@css/table.css">
               <columns>
-                <TableColumn prefWidth="118.0" text="Matricula" />
-                <TableColumn prefWidth="203.0" text="Nome" />
-                  <TableColumn prefWidth="114.0" text="Faltas" />
-                  <TableColumn prefWidth="58.0" text="Nota 1" />
-                  <TableColumn prefWidth="53.0" text="Nota 2" />
-                  <TableColumn prefWidth="75.0" text="Nota 3" />
-                  <TableColumn prefWidth="79.0" text="Mdia" />
-                  <TableColumn prefWidth="57.0" text="Final" />
-                  <TableColumn prefWidth="93.0" text="AÃ§ÃĢo" />
+                <TableColumn prefWidth="99.0" text="Matricula" />
+                <TableColumn prefWidth="135.0" text="Nome" />
+                  <TableColumn prefWidth="87.0" text="Faltas" />
+                  <TableColumn prefWidth="94.0" text="Nota 1" />
+                  <TableColumn prefWidth="82.0" text="Nota 2" />
+                  <TableColumn prefWidth="93.0" text="Nota 3" />
+                  <TableColumn prefWidth="68.0" text="Nota 4" />
+                  <TableColumn text="Media" />
+                  <TableColumn prefWidth="56.0" text="Final" />
+                  <TableColumn prefWidth="83.0" text="Açao" />
               </columns>
             </TableView>
-            <Button layoutX="930.0" layoutY="579.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="269.0" style="-fx-background-color: #E77D00;" text="CADASTRAR NOVO PROFESSOR" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+            <Text fill="WHITE" layoutX="462.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="n" textAlignment="CENTER">
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
-            </Button>
-            <Text fill="WHITE" layoutX="386.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirio de Classe" textAlignment="CENTER">
+            </Text>
+            <Text fill="WHITE" layoutX="386.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diario de Turma" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="25.0" />
+               </font>
+            </Text>
+            <TextField layoutX="487.0" layoutY="617.0" />
+            <TextField layoutX="658.0" layoutY="617.0" />
+            <TextField layoutX="829.0" layoutY="617.0" />
+            <Button layoutX="755.0" layoutY="649.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: #E77D00;" text="ATUALIZAR" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Text fill="WHITE" layoutX="487.0" layoutY="610.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTA 1" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="658.0" layoutY="610.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTA 2" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="829.0" layoutY="609.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTA 3" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="386.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOME:" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="455.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <TextField layoutX="1000.0" layoutY="617.0" />
+            <Text fill="WHITE" layoutX="998.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTA 4" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Text>
       </children>

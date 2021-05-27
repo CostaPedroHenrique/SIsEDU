@@ -99,6 +99,18 @@ public class Registration implements Initializable{
     }
     
     @FXML
+    public void setManageTeacher()  throws IOException {
+        System.out.println("testes");
+        App.setRoot("manageTeacher");
+    }
+    
+    @FXML
+    public void setManageClass()  throws IOException {
+        System.out.println("testes");
+        App.setRoot("manageClass");
+    }
+    
+    @FXML
     public void setMain()  throws IOException {
         App.setRoot("secondary");
     }

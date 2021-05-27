@@ -8,18 +8,12 @@ import com.mycompany.sisedu.model.Admin;
 import com.mycompany.sisedu.model.Student;
 import com.mycompany.sisedu.model.Teacher;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.List;
-import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
@@ -43,15 +37,25 @@ public class Login {
 
     @FXML
     private void login() throws IOException, NoSuchAlgorithmException {
+        System.out.println("Chegou aqui essa caceta");
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         String toogleGroupValue = selectedRadioButton.getText();
         String registrationValue = registration.getText();
         String passwordValue = password.getText();
-        
+        System.out.println(toogleGroupValue);
         String hashPassword = Base64.getEncoder().encodeToString(passwordValue.getBytes());
 
+        
         if(emailIsValid(registrationValue)){
-            getAdmin(registrationValue, hashPassword);        
+            if(toogleGroupValue.equals("Administrador")){
+                getAdmin(registrationValue, hashPassword);  
+            }
+            else if (toogleGroupValue.equals("Professor")) {
+                getTeacher(registrationValue, hashPassword);
+            }
+            else {
+                getStudent(registrationValue, hashPassword);
+            }
         }
         else{
             emailInvalid();
@@ -104,12 +108,11 @@ public class Login {
         teachers = controller.find( registration, password );
         if (teachers.size() > 0 ) {
             Teacher teacher = teachers.get(0);
-            App.setRoot("secondary");
-            
+            App.setRoot("classDetails");
         }
         else {
             accessDanieded();
-        } 
+        }
     }
     
     private void getStudent( String registration, String password ) throws IOException{

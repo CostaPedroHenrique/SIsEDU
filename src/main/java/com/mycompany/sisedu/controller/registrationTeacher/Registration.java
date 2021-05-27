@@ -57,15 +57,22 @@ public class Registration {
     }
     
     @FXML
-    public void setAddClass()  throws IOException {
+    public void setManageClass()  throws IOException {
         System.out.println("testes");
-        App.setRoot("registrationClass");
+        App.setRoot("manageClass");
     }
+   
     
     @FXML
     public void setAddStudent()  throws IOException {
         System.out.println("testes");
         App.setRoot("registrationStudent");
+    }
+    
+    @FXML
+    public void setManageTeacher()  throws IOException {
+        System.out.println("testes");
+        App.setRoot("manageTeacher");
     }
     
     @FXML

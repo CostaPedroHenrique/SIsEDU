@@ -1,12 +1,15 @@
 package com.mycompany.sisedu.controller;
 
+import com.mycompany.sisedu.model.Admin;
 import com.mycompany.sisedu.model.Teacher;
 import com.mycompany.sisedu.services.Manager;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 
 public class TeacherController {
@@ -45,15 +48,14 @@ public class TeacherController {
         return teachers; 
     }
     
-//    Irei terminar algum dia
-    public List<Teacher> find( String registration, String password){
+    public List<Teacher> find( String registration, String password) throws UnsupportedEncodingException{
         if(!em.getTransaction().isActive()){
             em.getTransaction().begin();
         }
-        String query = "SELECT teacher FROM Teacher teacher where  email=".concat(registration).concat("and password=").concat(password);
-        Query search = em.createQuery(query);
-        List<Teacher> teachers = search.getResultList();
-        
+        String jpql = "SELECT teacher FROM Teacher teacher where  email= '".concat(registration).concat("' and password= '").concat(password).concat("'");
+        TypedQuery<Teacher> typedQuery =  em.createQuery(jpql, Teacher.class);
+        List<Teacher> teachers = typedQuery.getResultList();
+
         return teachers;
     }
     

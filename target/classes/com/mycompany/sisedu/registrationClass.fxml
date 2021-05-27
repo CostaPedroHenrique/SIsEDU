@@ -49,10 +49,10 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" fill="#e0e0e00d" height="720.0" layoutX="-3.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
+            <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" fill="#e0e0e00d" height="720.0" layoutX="-3.0" layoutY="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
             <Group layoutY="-12.0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="726.0" layoutX="1.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" width="315.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="780.0" layoutX="-1.0" layoutY="12.0" stroke="TRANSPARENT" strokeType="INSIDE" width="315.0" />
                   <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="27.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/escola.png" />
@@ -104,17 +104,17 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button layoutX="76.0" layoutY="269.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Turmas" textFill="WHITE">
+                  <Button layoutX="73.0" layoutY="265.0" mnemonicParsing="false" onAction="#setManageClass" style="-fx-background-color: transparent;" text="Turmas" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="students" layoutX="78.0" layoutY="330.0" mnemonicParsing="false" onAction="#setAddStudent" style="-fx-background-color: transparent;" text="Alunos" textFill="WHITE">
+                  <Button fx:id="students" layoutX="75.0" layoutY="326.0" mnemonicParsing="false" onAction="#setAddStudent" style="-fx-background-color: transparent;" text="Alunos" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="teachers" layoutX="77.0" layoutY="396.0" mnemonicParsing="false" onAction="#setAddTeacher" style="-fx-background-color: transparent;" text="Professores" textFill="WHITE">
+                  <Button fx:id="teachers" layoutX="74.0" layoutY="392.0" mnemonicParsing="false" onAction="#setManageTeacher" style="-fx-background-color: transparent;" text="Professores" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>

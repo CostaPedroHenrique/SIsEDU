@@ -47,19 +47,19 @@ public class Navigation implements Initializable {
     ObservableList<Student> studentList;
     
     @FXML
-    public void setViewCreateStudent()  throws IOException {
+    public void setAddStudent()  throws IOException {
         System.out.println("testes");
         App.setRoot("registrationStudent");
     }
     
     @FXML
-    public void setViewCreateTeacher()  throws IOException {
-        App.setRoot("registrationTeacher");
+    public void setViewManageTeacher()  throws IOException {
+        App.setRoot("manageTeacher");
     }
     
     @FXML
-    public void setViewCreateClass()  throws IOException {
-        App.setRoot("registrationClass");
+    public void setViewManageClass()  throws IOException {
+        App.setRoot("manageClass");
     }
     
     
