@@ -27,6 +27,14 @@ public class Student {
     
     @Column(name = "email")
     private String email;
+
+    public Integer getRegistrationcode() {
+        return registrationcode;
+    }
+
+    public void setRegistrationcode(Integer registrationcode) {
+        this.registrationcode = registrationcode;
+    }
     
     @Column(name = "password")
     private String password;
@@ -69,6 +77,11 @@ public class Student {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    @Override
+    public String toString() {
+        return getName();
     }
   
 }

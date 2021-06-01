@@ -34,8 +34,10 @@
 
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -49,10 +51,10 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" fill="#e5e5e5" height="720.0" layoutX="-3.0" layoutY="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
+            <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" fill="#e5e5e5" height="720.0" layoutX="-3.0" layoutY="-10.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
             <Group layoutY="-12.0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="726.0" layoutX="-1.0" layoutY="10.0" stroke="TRANSPARENT" strokeType="INSIDE" width="315.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="724.0" layoutX="-1.0" layoutY="10.0" stroke="TRANSPARENT" strokeType="INSIDE" width="315.0" />
                   <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="27.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/escola.png" />
@@ -121,40 +123,53 @@
                   </Button>
                </children>
             </Group>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="251.0" layoutX="338.0" layoutY="98.0" stroke="BLACK" strokeType="INSIDE" width="446.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="251.0" layoutX="805.0" layoutY="97.0" stroke="BLACK" strokeType="INSIDE" width="446.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="310.0" layoutX="451.0" layoutY="373.0" stroke="BLACK" strokeType="INSIDE" width="691.0" />
-            <Text fill="WHITE" layoutX="411.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciar Turmas" textAlignment="CENTER">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="251.0" layoutX="338.0" layoutY="22.0" stroke="BLACK" strokeType="INSIDE" width="446.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="251.0" layoutX="805.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="446.0" />
+            <Text fill="WHITE" layoutX="411.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciar Turmas" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
             </Text>
-            <Text fx:id="classLenght" fill="WHITE" layoutX="424.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastradas: 50" textAlignment="CENTER">
+            <Text fx:id="classLenght" fill="WHITE" layoutX="424.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastradas: 50" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="840.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciar Professores" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="840.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciar Professores" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
             </Text>
-            <Text fx:id="teacherLenght" fill="WHITE" layoutX="890.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrados: 50" textAlignment="CENTER">
+            <Text fx:id="teacherLenght" fill="WHITE" layoutX="890.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrados: 50" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
             </Text>
-            <TableView fx:id="tableMain" layoutX="439.0" layoutY="367.0" prefHeight="316.0" prefWidth="705.0" stylesheets="@css/table.css">
+            <TableView fx:id="tableMain" editable="true" layoutX="336.0" layoutY="290.0" onMouseClicked="#getSelected" prefHeight="431.0" prefWidth="705.0" stylesheets="@css/table.css">
               <columns>
+                  <TableColumn fx:id="tableStudantId" prefWidth="142.0" text="Matricula" />
                 <TableColumn fx:id="tableStudantName" prefWidth="199.0" text="Aluno" />
-                  <TableColumn fx:id="tableStudantEmail" prefWidth="230.0" text="E-mail" />
-                <TableColumn fx:id="tableClass" prefWidth="158.0" text="Turma" />
-                  <TableColumn prefWidth="109.0" text="Função" />
+                  <TableColumn fx:id="tableStudantEmail" prefWidth="139.0" text="E-mail" />
+                <TableColumn fx:id="tableClass" prefWidth="224.0" text="Turma" />
               </columns>
                <columnResizePolicy>
 <!--                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />-->
                </columnResizePolicy>
             </TableView>
+            <Button layoutX="1062.0" layoutY="466.0" mnemonicParsing="false" onAction="#handleEdit" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #E77D00;" text="Editar Aluno" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Fira Code Regular" size="21.0" />
+               </font>
+            </Button>
+            <TextField fx:id="editName" layoutX="1062.0" layoutY="321.0" prefHeight="27.0" prefWidth="198.0" />
+            <Label layoutX="1062.0" layoutY="295.0" text="Nome" />
+            <TextField fx:id="editEmail" layoutX="1062.0" layoutY="400.0" prefHeight="27.0" prefWidth="198.0" />
+            <Label layoutX="1062.0" layoutY="374.0" text="Email" />
+            <Button layoutX="1064.0" layoutY="554.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: red;" text="Cancelar Matricula" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
       </children>
     </AnchorPane>
   </children>

@@ -77,6 +77,5 @@ public class Manage implements Initializable {
         TeacherController teacherController = new TeacherController();
         List<Teacher> listTeacher = teacherController.list();
         teacherList = FXCollections.observableArrayList(listTeacher);
-    }
-    
+    }  
 }

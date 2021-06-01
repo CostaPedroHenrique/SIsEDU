@@ -19,25 +19,19 @@ import javafx.stage.StageStyle;
  */
 public class App extends Application {
 
+    int ProfessorId;
+    int AdminId;
+    int studentId;
+    
+    
+    int ClassId;
+    
+    
+    
+    
     public static Scene scene;
     double xOffset, yOffset;
-//
-//    @Override
-//    public void start(Stage stage) throws IOException {
-//        scene = new Scene(loadFXML("login"), 1920, 1280);
-//        stage.setScene(scene);
-////        stage.setResizable(false);
-//        stage.show();
-//    }
-//
-//    static void setRoot(String fxml) throws IOException {
-//        scene.setRoot(loadFXML(fxml));
-//    }
-//
-//    private static Parent loadFXML(String fxml) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-//        return fxmlLoader.load();
-//    }
+    
     @Override
     public void start(Stage stage) throws Exception{
         scene = new Scene(loadFXML("login"), 1280, 720);

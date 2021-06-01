@@ -108,7 +108,7 @@ public class Login {
         teachers = controller.find( registration, password );
         if (teachers.size() > 0 ) {
             Teacher teacher = teachers.get(0);
-            App.setRoot("classDetails");
+            App.setRoot("classMain");
         }
         else {
             accessDanieded();
@@ -122,7 +122,7 @@ public class Login {
         students = controller.find( registration, password );
         if (students.size() > 0 ) {
             Student student = students.get(0);
-            App.setRoot("secondary");
+            App.setRoot("dashboardStudent");
             
         }
         else {
