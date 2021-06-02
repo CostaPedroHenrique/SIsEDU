@@ -33,10 +33,6 @@ public class Subject {
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "fk_class",nullable=false)
     private Class classId;
-    
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "fk_teacher",nullable=false)
-    private Teacher teacher;
 
     public Integer getRegistrationCode() {
         return registrationCode;
@@ -58,9 +54,6 @@ public class Subject {
         return classId;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
-    }
 
     public void setRegistrationCode(Integer registrationCode) {
         this.registrationCode = registrationCode;
@@ -82,9 +75,6 @@ public class Subject {
         this.classId = classId;
     }
 
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
     
     
     @Override

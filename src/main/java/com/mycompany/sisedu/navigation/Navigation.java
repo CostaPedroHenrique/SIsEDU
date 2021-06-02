@@ -168,6 +168,12 @@ public class Navigation implements Initializable {
         
         App.setRoot("secondary");
     }
+    
+    
+    @FXML
+    public void setLogin()  throws IOException {
+        App.setRoot("login");
+    }
 }
 
 //com.mycompany.sisedu.navigation.navigation

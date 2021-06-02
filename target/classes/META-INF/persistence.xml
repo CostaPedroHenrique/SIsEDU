@@ -15,6 +15,7 @@
       <property name="hibernate.connection.password" value="123456"/>
       <property name="hibernate.connection.url" value="jdbc:postgresql://127.0.0.1:5432/sisedu"/>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      
       <!-- somente cria as tabelas.-->
       <property name="hibernate.hbm2ddl.auto" value="update"/>
       <!-- deleta e depois recria as tabelas. -->

@@ -64,7 +64,6 @@ public class Registration implements Initializable{
         studant.setClassId(classSelected);  
         
         StudentController studentController = new StudentController();
-        System.out.println("#########################################################");
         System.out.println(studant.getRegistrationCode());
         System.out.println(studant.getName());
         System.out.println(studant.getEmail());
@@ -85,6 +84,10 @@ public class Registration implements Initializable{
         name.clear();
         email.clear();
         password.clear();
+    }
+    
+    private void manageResult(Student student){
+        
     }
     
     @FXML
@@ -117,5 +120,10 @@ public class Registration implements Initializable{
         
         obsClass = FXCollections.observableArrayList(classList);
         className.setItems(obsClass);
+    }
+    
+    @FXML
+    public void setLogin()  throws IOException {
+        App.setRoot("login");
     }
 }

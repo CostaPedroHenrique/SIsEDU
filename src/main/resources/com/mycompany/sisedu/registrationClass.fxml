@@ -94,7 +94,7 @@
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
                      </effect>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="78.0" layoutY="685.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sair" textAlignment="CENTER">
+                  <Text fill="WHITE" layoutX="78.0" layoutY="685.0" onMouseClicked="#setLogin" strokeType="OUTSIDE" strokeWidth="0.0" text="Sair" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
@@ -133,32 +133,38 @@
                   <Font size="30.0" />
                </font>
             </Button>
-            <TextField fx:id="className" layoutX="414.0" layoutY="223.0" prefHeight="39.0" prefWidth="253.0">
+            <TextField fx:id="className" layoutX="416.0" layoutY="179.0" prefHeight="39.0" prefWidth="253.0">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Text fill="WHITE" layoutX="414.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turma" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="416.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turma" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="414.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Limite de Alunos" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="416.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Limite de Alunos" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Text>
-            <TextField fx:id="classLimit" layoutX="414.0" layoutY="368.0" prefHeight="39.0" prefWidth="253.0">
+            <TextField fx:id="classLimit" layoutX="416.0" layoutY="291.0" prefHeight="39.0" prefWidth="253.0">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Text fill="WHITE" layoutX="414.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turno" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="416.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turno" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Text>
-            <ComboBox fx:id="shift" layoutX="414.0" layoutY="523.0" prefHeight="25.0" prefWidth="253.0" />
+            <ComboBox fx:id="shift" layoutX="416.0" layoutY="479.0" prefHeight="25.0" prefWidth="253.0" />
+            <Text fill="WHITE" layoutX="416.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Professor" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="teacher" layoutX="416.0" layoutY="397.0" prefHeight="25.0" prefWidth="253.0" />
       </children>
     </AnchorPane>
   </children>

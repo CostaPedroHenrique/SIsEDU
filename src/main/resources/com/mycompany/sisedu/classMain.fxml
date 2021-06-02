@@ -85,7 +85,7 @@
                         <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
                      </effect>
                   </ImageView>
-                  <Text fill="WHITE" layoutX="78.0" layoutY="685.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sair" textAlignment="CENTER">
+                  <Text fill="WHITE" layoutX="78.0" layoutY="685.0" onMouseClicked="#setLogin" strokeType="OUTSIDE" strokeWidth="0.0" text="Sair" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>

@@ -1,6 +1,8 @@
 package com.mycompany.sisedu;
 
 import com.mycompany.sisedu.controller.TeacherController;
+import com.mycompany.sisedu.model.Admin;
+import com.mycompany.sisedu.model.Student;
 import com.mycompany.sisedu.model.Teacher;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,9 +21,9 @@ import javafx.stage.StageStyle;
  */
 public class App extends Application {
 
-    int ProfessorId;
-    int AdminId;
-    int studentId;
+    public static Teacher teacher;
+    public static Admin admin;
+    public static Student student;
     
     
     int ClassId;

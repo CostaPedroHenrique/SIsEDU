@@ -1,5 +1,6 @@
 package com.mycompany.sisedu.model;
 
+import com.mycompany.sisedu.controller.SubjectController;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -17,6 +19,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="class")
 public class Class {
+    
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer registrationCode;
@@ -29,13 +32,25 @@ public class Class {
     
     @Column(name="classroom")
     private String classroom;
-    
+        
     @Column(name="capacityStudents")
     private int capacityStudents;
     
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "fk_school",nullable=false)
     private School school;
+    
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "fk_teacher",nullable=false)
+    private Teacher teacher;
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
 
     public Integer getRegistrationCode() {
         return registrationCode;

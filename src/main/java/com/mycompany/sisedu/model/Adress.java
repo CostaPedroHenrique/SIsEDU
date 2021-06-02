@@ -31,6 +31,12 @@ public class Adress {
     
     @Column(name="district")
     private String district;
+    
+    @Column(name="street")
+    private String street;
+    
+    @Column(name="number")
+    private String number;
 
     public void setId(Long id) {
         this.id = id;
@@ -79,10 +85,4 @@ public class Adress {
     public String getNumber() {
         return number;
     }
-    
-    @Column(name="street")
-    private String street;
-    
-    @Column(name="number")
-    private String number;
 }

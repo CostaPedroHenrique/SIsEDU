@@ -87,11 +87,13 @@ public class Login {
     
     private void getAdmin( String registration, String password ) throws IOException{
         int i;
+        
         List<Admin> admins;
         AdminController controller = new AdminController();
         admins = controller.find( registration, password );
         if (admins.size() > 0 ) {
             Admin admin = admins.get(0);
+            App.admin = admin;
             App.setRoot("secondary");
             
         }
@@ -108,6 +110,7 @@ public class Login {
         teachers = controller.find( registration, password );
         if (teachers.size() > 0 ) {
             Teacher teacher = teachers.get(0);
+            App.teacher = teacher;
             App.setRoot("classMain");
         }
         else {
@@ -122,6 +125,7 @@ public class Login {
         students = controller.find( registration, password );
         if (students.size() > 0 ) {
             Student student = students.get(0);
+            App.student = student;
             App.setRoot("dashboardStudent");
             
         }

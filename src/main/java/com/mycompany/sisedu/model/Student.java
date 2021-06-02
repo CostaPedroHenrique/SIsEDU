@@ -27,6 +27,17 @@ public class Student {
     
     @Column(name = "email")
     private String email;
+    
+    @Column(name="active")
+    private boolean active;
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
 
     public Integer getRegistrationcode() {
         return registrationcode;

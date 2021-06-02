@@ -80,4 +80,9 @@ public class Registration {
         System.out.println("testes");
         App.setRoot("secondary");
     }
+    
+    @FXML
+    public void setLogin()  throws IOException {
+        App.setRoot("login");
+    }
 }

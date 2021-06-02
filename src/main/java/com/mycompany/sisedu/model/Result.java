@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.mycompany.sisedu.model;
 
 import java.util.Date;
@@ -16,11 +21,9 @@ import javax.persistence.Table;
  * @author pedrohenrique
  */
 @Entity
-@Table(name="frequency")
-public class Frequency {
-    private void Frequency() {
-        this.present = false;
-    }
+@Table(name="result")
+public class Result {
+    
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
@@ -33,11 +36,20 @@ public class Frequency {
     @JoinColumn(name = "fk_subject",nullable=false)
     private Subject subject;
     
-    @Column(name="present")
-    private boolean present;
+    @Column(name="nota1")
+    private int nota1;
     
-    @Column(name="date")
-    private Date date;
+    @Column(name="nota2")
+    private int nota2;
+    
+    @Column(name="nota3")
+    private int nota3;
+    
+    @Column(name="nota4")
+    private int nota4;
+    
+    @Column(name="final")
+    private int finalResult;
 
     public Integer getId() {
         return id;
@@ -51,12 +63,24 @@ public class Frequency {
         return subject;
     }
 
-    public boolean isPresent() {
-        return present;
+    public int getNota1() {
+        return nota1;
     }
-    
-    public boolean presentProperty(){
-        return present;
+
+    public int getNota2() {
+        return nota2;
+    }
+
+    public int getNota3() {
+        return nota3;
+    }
+
+    public int getNota4() {
+        return nota4;
+    }
+
+    public int getFinalResult() {
+        return finalResult;
     }
 
     public void setId(Integer id) {
@@ -71,16 +95,24 @@ public class Frequency {
         this.subject = subject;
     }
 
-    public void setPresent(boolean present) {
-        this.present = present;
+    public void setNota1(int nota1) {
+        this.nota1 = nota1;
     }
 
-    public Date getDate() {
-        return date;
+    public void setNota2(int nota2) {
+        this.nota2 = nota2;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setNota3(int nota3) {
+        this.nota3 = nota3;
     }
-    
+
+    public void setNota4(int nota4) {
+        this.nota4 = nota4;
+    }
+
+    public void setFinalResult(int finalResult) {
+        this.finalResult = finalResult;
+    }
 }
+

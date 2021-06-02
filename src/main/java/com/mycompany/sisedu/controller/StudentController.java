@@ -59,7 +59,7 @@ public class StudentController {
         return students; 
     }
     
-        public List<Student> find( String registration, String password) {
+    public List<Student> find( String registration, String password) {
         if(!em.getTransaction().isActive()){
             em.getTransaction().begin();
         }
@@ -69,6 +69,16 @@ public class StudentController {
         List<Student> students = typedQuery.getResultList();
 
         return students;
+    }
+    
+    public List<Student> findByClass(int classId){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        Query search = em.createQuery("SELECT studant FROM Student studant where fk_class = "+classId);
+        List<Student> students = search.getResultList();
+        
+        return students; 
     }
     
     public Student find( int id){

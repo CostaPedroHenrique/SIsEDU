@@ -78,4 +78,9 @@ public class Manage implements Initializable {
         List<Teacher> listTeacher = teacherController.list();
         teacherList = FXCollections.observableArrayList(listTeacher);
     }  
+    
+    @FXML
+    public void setLogin()  throws IOException {
+        App.setRoot("login");
+    }
 }

@@ -49,6 +49,16 @@ public class SubjectController {
         return students; 
     }
     
+    public List<Subject> findByClass(int classId){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        Query search = em.createQuery("SELECT subject FROM Subject subject where fk_class = " + classId);
+        List<Subject> subjects = search.getResultList();
+        
+        return subjects;
+    }
+    
     public Subject find( int id){
         Subject subject = em.find(Subject.class, id);
  

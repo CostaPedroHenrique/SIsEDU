@@ -24,6 +24,17 @@ public class Teacher {
     @Column(name="email")
     private String email;
     
+    @Column(name="active")
+    private boolean active;
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+    
     @Column(name="password")
     private String password;
 
@@ -57,5 +68,11 @@ public class Teacher {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    
+    @Override
+    public String toString() {
+        return getName();
     }
 }

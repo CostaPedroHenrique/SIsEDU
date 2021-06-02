@@ -4,8 +4,6 @@ import com.mycompany.sisedu.model.Class;
 import com.mycompany.sisedu.services.Manager;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 /**
@@ -46,6 +44,16 @@ public class ClassController {
         List<Class> classes = search.getResultList();
         
         return classes; 
+    }
+    
+    public Class findByTeacher(int idTeacher){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        Query search = em.createQuery("SELECT turma FROM Class turma where fk_teacher = "+idTeacher);
+        List<Class> classes = search.getResultList();
+        
+        return classes.get(0); 
     }
     
     public Class find( int id){

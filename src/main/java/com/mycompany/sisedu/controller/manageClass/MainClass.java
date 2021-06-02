@@ -19,4 +19,9 @@ public class MainClass {
     void viewFrequency(MouseEvent event) throws IOException {
         App.setRoot("frequency");
     }
+    
+    @FXML
+    public void setLogin()  throws IOException {
+        App.setRoot("login");
+    }
 }
