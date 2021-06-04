@@ -44,7 +44,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.sisedu.controller.manageClass.StudentController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
@@ -57,20 +57,17 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <TableView layoutX="8.0" layoutY="135.0" prefHeight="562.0" prefWidth="1246.0" stylesheets="@css/table.css">
+            <TableView fx:id="mainTable" layoutX="8.0" layoutY="135.0" prefHeight="562.0" prefWidth="1246.0" stylesheets="@css/table.css">
               <columns>
-                <TableColumn prefWidth="206.0" text="Materia" />
-                  <TableColumn prefWidth="103.0" text="Faltas" />
-                  <TableColumn prefWidth="87.0" text="Nota 1" />
-                  <TableColumn prefWidth="106.0" text="Nota 2" />
-                  <TableColumn prefWidth="111.0" text="Nota 3" />
-                  <TableColumn prefWidth="117.0" text="Nota 4" />
-                  <TableColumn prefWidth="161.0" text="Media" />
-                  <TableColumn prefWidth="191.0" text="Final" />
-                  <TableColumn prefWidth="163.0" text="Resultado" />
+                <TableColumn fx:id="tableSubject" prefWidth="280.0" text="Materia" />
+                  <TableColumn fx:id="tableNote1" prefWidth="223.0" text="Nota 1" />
+                  <TableColumn fx:id="tableNote2" prefWidth="208.0" text="Nota 2" />
+                  <TableColumn fx:id="tableNote3" prefWidth="190.0" text="Nota 3" />
+                  <TableColumn fx:id="tableNote4" prefWidth="217.0" text="Nota 4" />
+                  <TableColumn fx:id="tableMean" prefWidth="127.0" text="Media" />
               </columns>
             </TableView>
-            <Text fill="WHITE" layoutX="87.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="n" textAlignment="CENTER">
+            <Text fx:id="className" fill="WHITE" layoutX="88.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="n" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -88,7 +85,7 @@
                   <ColorAdjust brightness="1.0" contrast="0.26" hue="0.64" saturation="1.0" />
                </effect>
             </ImageView>
-            <Text accessibleRole="BUTTON" fill="WHITE" layoutX="1202.0" layoutY="66.0"  strokeType="OUTSIDE" strokeWidth="0.0" text="Sair" textAlignment="CENTER">
+            <Text accessibleRole="BUTTON" fill="WHITE" layoutX="1202.0" layoutY="66.0" onMouseClicked="#setLogin" strokeType="OUTSIDE" strokeWidth="0.0" text="Sair" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -98,7 +95,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="87.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="n" textAlignment="CENTER">
+            <Text fx:id="studentName" fill="WHITE" layoutX="87.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="n" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

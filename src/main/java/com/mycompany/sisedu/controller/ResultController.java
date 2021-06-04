@@ -51,6 +51,27 @@ public class ResultController {
         return results; 
     }
     
+    public List<Result> findBySubject(int subId){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        Query search = em.createQuery("SELECT result FROM Result result where fk_subject = " + subId);
+        List<Result> results = search.getResultList();
+        
+        return results; 
+    }
+    
+    public List<Result> findByStudent(int studentId){
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        
+        Query search = em.createQuery("SELECT result FROM Result result where fk_student = " + studentId);
+        List<Result> results = search.getResultList();
+        
+        return results; 
+    }
+    
     
     public Result find( int id){
         if(!em.getTransaction().isActive()){

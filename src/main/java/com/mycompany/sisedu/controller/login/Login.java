@@ -7,12 +7,11 @@ import com.mycompany.sisedu.controller.TeacherController;
 import com.mycompany.sisedu.model.Admin;
 import com.mycompany.sisedu.model.Student;
 import com.mycompany.sisedu.model.Teacher;
+import static com.mycompany.sisedu.services.Utils.emailIsValid;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
@@ -37,7 +36,6 @@ public class Login {
 
     @FXML
     private void login() throws IOException, NoSuchAlgorithmException {
-        System.out.println("Chegou aqui essa caceta");
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         String toogleGroupValue = selectedRadioButton.getText();
         String registrationValue = registration.getText();
@@ -133,22 +131,4 @@ public class Login {
             accessDanieded();
         } 
     }
-    
-    
-    private boolean emailIsValid(String email){
-        String regex = "^(.+)@(.+)$";
- 
-        Pattern pattern = Pattern.compile(regex);
-        
-        Matcher matcher = pattern.matcher(email);
-
-        return matcher.matches();
-    }
-    
-
-//    @Override
-//    public void initialize(URL url, ResourceBundle rb) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//    
 }

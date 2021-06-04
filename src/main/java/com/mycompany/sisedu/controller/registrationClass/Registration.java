@@ -1,15 +1,10 @@
 package com.mycompany.sisedu.controller.registrationClass;
-import com.mycompany.sisedu.controller.registrationStudent.*;
-import com.mycompany.sisedu.controller.registrationTeacher.*;
-import com.mycompany.sisedu.App;
 
 import com.mycompany.sisedu.App;
 import com.mycompany.sisedu.controller.ClassController;
 import com.mycompany.sisedu.controller.SchoolController;
-import com.mycompany.sisedu.controller.StudentController;
 import com.mycompany.sisedu.controller.SubjectController;
 import com.mycompany.sisedu.controller.TeacherController;
-import com.mycompany.sisedu.model.Student;
 import com.mycompany.sisedu.model.Teacher;
 import com.mycompany.sisedu.model.Class;
 import com.mycompany.sisedu.model.School;
@@ -18,20 +13,15 @@ import com.mycompany.sisedu.model.Subject;
 import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.net.URL;
-import java.util.Base64;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TextField;
 
 /**
@@ -155,18 +145,6 @@ public class Registration implements Initializable{
     }
     
     private void addSubjects(Class CLASS){
-        System.out.println("######################################################");
-        System.out.println("######################################################");
-        System.out.println("######################################################");
-        System.out.println("######################################################");
-        System.out.println("######################################################");
-        System.out.println("######################################################");
-        System.out.println("######################################################");
-        System.out.println("######################################################");
-        System.out.println("######################################################");
-        System.out.println("######################################################");
-        System.out.println("######################################################");
-        System.out.println("######################################################");
 
         Subject subject = new Subject();
         SubjectController subjectController = new SubjectController();

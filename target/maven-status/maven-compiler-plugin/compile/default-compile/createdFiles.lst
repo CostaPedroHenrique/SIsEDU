@@ -1,4 +1,5 @@
 com/mycompany/sisedu/model/Student.class
+com/mycompany/sisedu/controller/registrationClass/Registration.class
 com/mycompany/sisedu/controller/login/Login.class
 com/mycompany/sisedu/App.class
 com/mycompany/sisedu/controller/manageClass/ManageDetails.class
@@ -6,7 +7,9 @@ com/mycompany/sisedu/controller/manageTeacher/Manage.class
 com/mycompany/sisedu/services/Manager.class
 com/mycompany/sisedu/controller/manageClass/MainClass.class
 com/mycompany/sisedu/controller/registrationStudent/Registration.class
+com/mycompany/sisedu/model/Frequency.class
 com/mycompany/sisedu/model/Adress.class
+com/mycompany/sisedu/controller/ResultController.class
 com/mycompany/sisedu/model/Subject.class
 com/mycompany/sisedu/model/Teacher.class
 com/mycompany/sisedu/controller/ClassController.class
@@ -16,6 +19,7 @@ com/mycompany/sisedu/controller/registrationTeacher/Registration.class
 com/mycompany/sisedu/controller/SubjectController.class
 com/mycompany/sisedu/App$1.class
 com/mycompany/sisedu/controller/AdminController.class
+com/mycompany/sisedu/controller/manageClass/ManageFrequency.class
 com/mycompany/sisedu/PrimaryController.class
 com/mycompany/sisedu/model/User.class
 com/mycompany/sisedu/controller/StudentController.class
@@ -26,3 +30,5 @@ com/mycompany/sisedu/controller/manageClass/Manage.class
 com/mycompany/sisedu/controller/FrequencyController.class
 com/mycompany/sisedu/model/Admin.class
 com/mycompany/sisedu/App$2.class
+com/mycompany/sisedu/services/Utils.class
+com/mycompany/sisedu/model/Result.class

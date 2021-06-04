@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="frequency")
 public class Frequency {
-    private void Frequency() {
+    public Frequency() {
         this.present = false;
     }
     @Id

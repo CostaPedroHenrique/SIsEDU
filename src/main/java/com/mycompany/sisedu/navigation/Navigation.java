@@ -106,15 +106,14 @@ public class Navigation implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         tableStudantName.setCellValueFactory(new PropertyValueFactory<Student, String>("name"));
         tableStudantId.setCellValueFactory(new PropertyValueFactory<Student, Integer>("registrationcode"));
         tableStudantEmail.setCellValueFactory(new PropertyValueFactory<Student, String>("email"));
         tableClass.setCellValueFactory(new PropertyValueFactory<Student, String>("classId"));
         getElementTable();
         
-        
-//        tableOptions.setCellValueFactory(new PropertyValueFactory<Student, String>("classId"));
-//        tableMain.setItems(studentList);
+       
 
         setNumberClass();
         setNumberTeacher();
@@ -166,7 +165,7 @@ public class Navigation implements Initializable {
         alert.setContentText("Continue gerenciando.");
         alert.show();
         
-        App.setRoot("secondary");
+//        App.setRoot("secondary");
     }
     
     

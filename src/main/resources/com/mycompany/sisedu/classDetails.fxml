@@ -99,36 +99,31 @@
             </Group>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c7eb0" height="671.0" layoutX="346.0" layoutY="26.0" stroke="BLACK" strokeType="INSIDE" width="908.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="5.0" layoutX="352.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="896.0" />
-            <Text fill="WHITE" layoutX="386.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turma:" textAlignment="CENTER">
+            <Text fx:id="classNameField" fill="WHITE" layoutX="386.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turma:" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <TableView layoutX="360.0" layoutY="141.0" prefHeight="406.0" prefWidth="879.0" stylesheets="@css/table.css">
+            <TableView fx:id="mainTable" layoutX="360.0" layoutY="141.0" onMouseClicked="#getSelected" prefHeight="406.0" prefWidth="879.0" stylesheets="@css/table.css">
               <columns>
-                <TableColumn prefWidth="135.0" text="Nome" />
-                  <TableColumn prefWidth="101.0" text="Faltas" />
-                  <TableColumn prefWidth="139.0" text="Nota 1" />
-                  <TableColumn prefWidth="84.0" text="Nota 2" />
-                  <TableColumn prefWidth="121.0" text="Nota 3" />
-                  <TableColumn prefWidth="103.0" text="Nota 4" />
-                  <TableColumn prefWidth="88.0" text="Media" />
-                  <TableColumn prefWidth="107.0" text="Final" />
+                  <TableColumn fx:id="tableId" minWidth="0.0" prefWidth="0.0" text="Id" visible="false" />
+                <TableColumn fx:id="tableName" prefWidth="202.0" text="Nome" />
+                  <TableColumn fx:id="tableNote1" prefWidth="96.0" text="Nota 1" />
+                  <TableColumn fx:id="tableNote2" prefWidth="99.0" text="Nota 2" />
+                  <TableColumn fx:id="tableNote3" prefWidth="114.0" text="Nota 3" />
+                  <TableColumn fx:id="tableNote4" prefWidth="87.0" text="Nota 4" />
+                  <TableColumn fx:id="tableMean" prefWidth="132.0" text="Media" />
+                  <TableColumn fx:id="tableFinal" prefWidth="146.0" text="Final" />
               </columns>
             </TableView>
-            <Text fill="WHITE" layoutX="462.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="n" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Text>
             <Text fill="WHITE" layoutX="386.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diario de Turma" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Text>
-            <TextField layoutX="487.0" layoutY="617.0" />
-            <TextField layoutX="658.0" layoutY="617.0" />
-            <TextField layoutX="829.0" layoutY="617.0" />
+            <TextField fx:id="note1" layoutX="487.0" layoutY="617.0" />
+            <TextField fx:id="note2" layoutX="658.0" layoutY="617.0" />
+            <TextField fx:id="note3" layoutX="829.0" layoutY="617.0" />
             <Button layoutX="755.0" layoutY="649.0" mnemonicParsing="false" onAction="#upgrade" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: #E77D00;" text="ATUALIZAR" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -149,17 +144,12 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="386.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOME:" textAlignment="CENTER">
+            <Text fx:id="studantNameSelected" fill="WHITE" layoutX="386.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="455.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Text>
-            <TextField layoutX="1000.0" layoutY="617.0" />
+            <TextField fx:id="note4" layoutX="1000.0" layoutY="617.0" />
             <Text fill="WHITE" layoutX="998.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTA 4" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
@@ -170,7 +160,7 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Text>
-            <ComboBox fx:id="subject" layoutX="971.0" layoutY="44.0" onAction="#changed" onInputMethodTextChanged="#changed" prefWidth="150.0" />
+            <ComboBox fx:id="subject" layoutX="971.0" layoutY="44.0" onAction="#changed" prefWidth="150.0" />
       </children>
     </AnchorPane>
   </children>

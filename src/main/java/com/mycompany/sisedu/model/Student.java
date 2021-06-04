@@ -18,6 +18,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name="studant")
 public class Student {
+    
+    public Student(){
+        this.active = true;
+    }
+    
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer registrationcode;
@@ -30,10 +35,19 @@ public class Student {
     
     @Column(name="active")
     private boolean active;
+    
+    
+    @Column(name = "password")
+    private String password;
+    
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "fk_class", nullable=false)
+    private Class classId;
 
     public void setActive(boolean active) {
         this.active = active;
     }
+    
 
     public boolean isActive() {
         return active;
@@ -47,12 +61,6 @@ public class Student {
         this.registrationcode = registrationcode;
     }
     
-    @Column(name = "password")
-    private String password;
-    
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "fk_class", nullable=false)
-    private Class classId;
 
     public void setClassId(Class classId) {
         this.classId = classId;

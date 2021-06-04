@@ -1,3 +1,4 @@
+/home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/controller/ResultController.java
 /home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/controller/manageTeacher/Manage.java
 /home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/controller/SchoolController.java
 /home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/model/Teacher.java
@@ -14,8 +15,10 @@
 /home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/App.java
 /home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/model/Frequency.java
 /home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/navigation/Navigation.java
+/home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/model/Result.java
 /home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/controller/FrequencyController.java
 /home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/PrimaryController.java
+/home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/services/Utils.java
 /home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/controller/registrationStudent/Registration.java
 /home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/controller/AdminController.java
 /home/pedrohenrique/Área de Trabalho/sisEdu-2ed3e748231261e0822e23a1430332a730bff277/src/main/java/com/mycompany/sisedu/controller/StudentController.java
